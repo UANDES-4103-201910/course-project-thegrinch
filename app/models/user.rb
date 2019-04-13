@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  require 'uri'
+
   has_many :comments
   has_many :posts
   has_many :blockeds, class_name: 'block', foreign_key: 'blocked_id'
@@ -14,5 +16,12 @@ class User < ApplicationRecord
   has_many :downvote_posts
   has_many :follow_posts
   has_many :mark_innapropiateds
+
+  validates :nickname, :email, :password, presence: true
+  validates :nickname, length: { minimum: 2 }
+  validates :name, length: { minimum: 2 }
+  validates :bio, length: { maximum: 500 }
+  validates :password, length: { in: 6..20 }
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
 end
