@@ -4,14 +4,14 @@
 @import "bootstrap";
 
 $tono-principal: green;
-$tono-secundario: #025402;
+$tono-principal2: #025402;
+$tono-secundario: white; // el fondo
 $tono-resalto: red;
-$tono-acompanamiento: white;
 $tono-letras: black;
 
 /* General: */
 body {
-  background: $tono-acompanamiento;
+  background: $tono-secundario;
 }
 
 /* Typography */
@@ -52,7 +52,7 @@ body {
     float: left;
     margin-right: 10px;
     font-size: 1.7em;
-    color: $tono-acompanamiento;
+    color: $tono-secundario;
     text-transform: uppercase;
     letter-spacing: -1px;
     padding-top: 9px;
