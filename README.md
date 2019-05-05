@@ -1,24 +1,43 @@
-# README
+# The Grinch
+A Web application for the course "Web Technologies", Universidad de los Andes.
+#### Members:
+Raimundo Gonzalez,
+Gustavo Vicuña
+## Getting started
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To get started with the app, clone the repo and then install the needed gems:
 
-Things you may want to cover:
+```
+$ bundle install
+```
 
-* Ruby version
+Next, migrate the database:
 
-* System dependencies
+```
+$ rails db:migrate
+```
 
-* Configuration
+Finally, you'll be ready to run the app in a local server:
 
-* Database creation
+```
+$ rails server
+```
+## Progress
+#### Done:
+* Footer
+* Users:
+    * Register
 
-* Database initialization
+#### On work:
+* Header
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    
+#### Missing:
+* Log in
+* Search (General)
+* User:
+    * Show / Edit
+* Post:
+    * Create
+    * Show / Edit
+#### Bugs:

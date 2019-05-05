@@ -18,18 +18,15 @@
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.email_field :email %>
   </div>
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.text_field :password %>
+    <%= form.password_field :password %>
   </div>
 
-  <div class="field">
-    <%= form.label :role %>
-    <%= form.text_field :role %>
-  </div>
+  <%= form.hidden_field :role, value: 'registered' %>
 
   <div class="field">
     <%= form.label :name %>
@@ -39,26 +36,6 @@
   <div class="field">
     <%= form.label :last_name %>
     <%= form.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :bio %>
-    <%= form.text_field :bio %>
-  </div>
-
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
-
-  <div class="field">
-    <%= form.label :geofence %>
-    <%= form.text_field :geofence %>
-  </div>
-
-  <div class="field">
-    <%= form.label :profession %>
-    <%= form.text_field :profession %>
   </div>
 
   <div class="actions">
