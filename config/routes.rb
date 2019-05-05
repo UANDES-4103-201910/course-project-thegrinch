@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  get 'achievements/index'
+  get 'achievements/new'
+  get 'achievements/create'
+  get 'achievements/destroy'
+  get 'achievements/edit'
+  get 'categories/index'
+  get 'categories/new'
+  get 'categories/create'
+  get 'categories/destroy'
+  get 'categories/edit'
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :comments
@@ -26,9 +39,10 @@ Rails.application.routes.draw do
   post '/users/:id/projects/new', to: 'projects#create'
   post '/projects/:id/promises/new', to: 'promises#create'
 
-  # get    '/login',   to: 'sessions#new'
-  # post   '/login',   to: 'sessions#create'
-  # delete '/logout',  to: 'sessions#destroy'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+
   root 'static_pages#home'
-  root 'static_pages#home'
+
 end

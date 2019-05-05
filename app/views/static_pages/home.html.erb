@@ -1,12 +1,17 @@
-<h1>The Grinch</h1>
-<ls><font size=4>Team members:<br/></font></ls>
-<body>Raimundo González<br/> Gustavo Vicuña<br/></body>
-<br/>
-<%= link_to 'User (new)', new_user_path(@user) %>
-<%= link_to 'User (index)', users_path %>
-<br/>
-<%= link_to 'Post (new)', new_post_path(@post) %>
-<%= link_to 'Post (index)', posts_path %>
-<br/>
-<%= link_to 'Comment (new)', new_comment_path(@comment) %>
-<%= link_to 'Comment (index)', comments_path %>
+<div class="center jumbotron">
+  <h1>Welcome to The Grinch</h1>
+  <h2>
+    Everybody needs to grinch about something!
+  </h2>
+  <%= link_to 'Register now!', register_path, class: "btn btn-lg btn-primary" %>
+</div>
+
+<div>
+  <p class='home'> Recent Complaints: </p>
+  <% @posts = Post.limit(5).order("RANDOM()") %>
+  <% @posts.each do |post| %>
+    <h3>
+      <%= link_to post.title , post_path(post) %>
+    </h3>
+  <% end %>
+</div>
