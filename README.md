@@ -24,20 +24,25 @@ $ rails server
 ```
 ## Progress
 #### Done:
+* Log in
 * Footer
 * Users:
     * Register
 
 #### On work:
 * Header
+* Design / CSS
+* User:
+    * Show / Edit
 
     
 #### Missing:
-* Log in
 * Search (General)
-* User:
-    * Show / Edit
 * Post:
     * Create
-    * Show / Edit
+    * Show / Edit (with comments show / create / edit)
+* Categories:
+    * Show / Edit / Create
+* Achievements:
+    * Show / Edit / Create
 #### Bugs:

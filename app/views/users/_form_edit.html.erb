@@ -1,0 +1,68 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="field">
+        <%= form.label :nickname %>
+        <%= form.text_field :nickname %>
+      </div>
+
+      <div class="field">
+        <%= form.label :email %>
+        <%= form.email_field :email %>
+      </div>
+
+      <div class="field">
+        <%= form.label :password %>
+        <%= form.password_field :password %>
+      </div>
+
+      <%= form.hidden_field :role, value: 'registered' %>
+
+      <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+      </div>
+
+      <div class="field">
+        <%= form.label :last_name %>
+        <%= form.text_field :last_name %>
+      </div>
+
+      <div class="field">
+        <%= form.label :bio %>
+        <%= form.text_field :bio %>
+      </div>
+
+      <div class="field">
+        <%= form.label :location %>
+        <%= form.text_field :location %>
+      </div>
+
+      <div class="field">
+        <%= form.label :geofence %>
+        <%= form.text_field :geofence %>
+      </div>
+
+      <div class="field">
+        <%= form.label :profession %>
+        <%= form.text_field :profession %>
+      </div>
+
+      <%= form.label :avatar %>
+      <%= form.file_field :avatar %>
+    </div>
+
+    <%= form.submit "Update", class: 'btn btn-primary' %>
+  </div>
+<% end %>

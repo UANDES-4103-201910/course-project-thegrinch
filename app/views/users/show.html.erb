@@ -3,52 +3,47 @@
 <p>
   <strong>Nickname:</strong>
   <%= @user.nickname %>
+  <%= link_to 'Edit', edit_user_path(@user) %>
 </p>
 
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
-  <strong>Role:</strong>
-  <%= @user.role %>
+  <%= link_to 'Edit', edit_user_path(@user) %>
 </p>
 
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
+  <%= link_to 'Edit', edit_user_path(@user) %>
 </p>
 
 <p>
   <strong>Last name:</strong>
   <%= @user.last_name %>
+  <%= link_to 'Edit', edit_user_path(@user) %>
 </p>
 
 <p>
   <strong>Bio:</strong>
   <%= @user.bio %>
+  <%= link_to 'Edit', edit_user_path(@user) %>
 </p>
 
 <p>
   <strong>Location:</strong>
   <%= @user.location %>
+  <%= link_to 'Edit', edit_user_path(@user) %>
 </p>
 
 <p>
   <strong>Geofence:</strong>
   <%= @user.geofence %>
+  <%= link_to 'Edit', edit_user_path(@user) %>
 </p>
 
 <p>
   <strong>Profession:</strong>
   <%= @user.profession %>
+  <%= link_to 'Edit', edit_user_path(@user) %>
 </p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
