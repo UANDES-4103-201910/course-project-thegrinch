@@ -26,14 +26,14 @@ $ rails server
 #### Done:
 * Log in
 * Footer
-* Users:
-    * Register
+    
 
 #### On work:
 * Header
 * Design / CSS
 * User:
     * Show / Edit
+    * Register
 
     
 #### Missing:
