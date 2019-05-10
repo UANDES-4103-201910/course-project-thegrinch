@@ -35,12 +35,12 @@ $ rails server
 * Seeds (Gonza)
 * Categories: (Gus)
     * Show / Edit / Create
+* Achievements: (Gus)
+    * Show / Edit / Create
     
 #### Missing:
 * Search Post/User
 * Post:
     * Create
     * Show / Edit (with comments show / create / edit)
-* Achievements:
-    * Show / Edit / Create
 #### Bugs:
