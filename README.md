@@ -34,10 +34,10 @@ $ rails server
 * User:
     * Show / Edit
     * Register
+* Seeds (Gonza)
 
     
 #### Missing:
-* Seed
 * Search (General)
 * Post:
     * Create
