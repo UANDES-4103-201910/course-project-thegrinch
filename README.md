@@ -37,6 +37,7 @@ $ rails server
 
     
 #### Missing:
+* Seed
 * Search (General)
 * Post:
     * Create
