@@ -1,12 +1,23 @@
-<header class="navbar navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
-    <%= link_to "The Grinch", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   root_path %></li>
+    <div class="navbar-header">
+      <%= link_to "The Grinch", root_path, id: "logo", class: "navbar-brand" %>
+    </div>
+    <form class="navbar-form navbar-left" action="">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="search">
+        <div class="input-group-btn">
+          <button class="btn btn-default btn_link btn_primary" type="submit">
+          </button>
+        </div>
+      </div>
+    </form>
+    <div class="row">
+      <ul class="nav navbar-nav">
         <li><%= link_to "Log in", '/login' %></li>
         <li><%= link_to "Register", '/register' %></li>
       </ul>
-    </nav>
+      <img src="" class="img-circle" alt="logged profile picture">
+    </div>
   </div>
-</header>
+</nav>

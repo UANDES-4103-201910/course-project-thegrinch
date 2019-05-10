@@ -1,49 +1,51 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nickname:</strong>
-  <%= @user.nickname %>
-  <%= link_to 'Edit', edit_user_path(@user) %>
-</p>
+<div class="row jumbotron">
+  <img src="" class="img-circle" alt="profile picture">
+  <div>
+    <p>
+      <strong>Username:</strong>
+      <%= @user.nickname %>
+      <%= link_to 'Edit', edit_user_path(@user) %>
+    </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-  <%= link_to 'Edit', edit_user_path(@user) %>
-</p>
+    <p>
+      <strong>Name:</strong>
+      <%= @user.name %>
+      <%= @user.last_name %>
+      <%= link_to 'Edit', edit_user_path(@user) %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-  <%= link_to 'Edit', edit_user_path(@user) %>
-</p>
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+      <%= link_to 'Edit', edit_user_path(@user) %>
+    </p>
+  </div>
+  <div>
+    <p>
+      <strong>Profession:</strong>
+      <%= @user.profession %>
+      <%= link_to 'Edit', edit_user_path(@user) %>
+    </p>
+    <p>
+      <strong>Location:</strong>
+      <%= @user.location %>
+      <%= link_to 'Edit', edit_user_path(@user) %>
+    </p>
+  </div>
+  <div>
+    <%= link_to 'Follow', register_path, class: "btn btn-primary" %>
+  </div>
+</div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-  <%= link_to 'Edit', edit_user_path(@user) %>
-</p>
+<div class="data_field">
+  <p>
+    <strong>Biography:<br></strong>
+    <%= @user.bio %>
+    <%= link_to 'Edit', edit_user_path(@user) %>
+  </p>
 
-<p>
-  <strong>Bio:</strong>
-  <%= @user.bio %>
-  <%= link_to 'Edit', edit_user_path(@user) %>
-</p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @user.location %>
-  <%= link_to 'Edit', edit_user_path(@user) %>
-</p>
+</div>
 
-<p>
-  <strong>Geofence:</strong>
-  <%= @user.geofence %>
-  <%= link_to 'Edit', edit_user_path(@user) %>
-</p>
-
-<p>
-  <strong>Profession:</strong>
-  <%= @user.profession %>
-  <%= link_to 'Edit', edit_user_path(@user) %>
-</p>
