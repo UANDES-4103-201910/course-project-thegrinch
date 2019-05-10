@@ -26,6 +26,11 @@ body {
   background-color: $tono-secundario;
 }
 
+div {
+  margin: 2px;
+  padding: 2px;
+}
+
 // Debugger (No cambiar)
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -88,6 +93,10 @@ label{
     color: white;
     text-decoration: none;
   }
+}
+
+.link-header{
+  color: $tono-secundario
 }
 
 .navbar-fixed-top{

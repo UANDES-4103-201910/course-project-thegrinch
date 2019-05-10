@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row jumbotron">
-  <img src="" class="img-circle" alt="profile picture">
-  <div>
+  <div style="width: 18%">
+    <img src="" class="img-circle" alt="profile picture">
+  </div>
+  <div style="width: 28%">
     <p>
       <strong>Username:</strong>
       <%= @user.nickname %>
@@ -22,7 +24,7 @@
       <%= link_to 'Edit', edit_user_path(@user) %>
     </p>
   </div>
-  <div>
+  <div style="width: 28%">
     <p>
       <strong>Profession:</strong>
       <%= @user.profession %>
@@ -34,7 +36,7 @@
       <%= link_to 'Edit', edit_user_path(@user) %>
     </p>
   </div>
-  <div>
+  <div style="width: 18%">
     <div>
       <%= link_to 'Follow', register_path, class: "btn btn-primary" %>
     </div>
@@ -52,14 +54,39 @@
   </p>
 </div>
 
-<div>
-  <div>
+<div class="row">
+  <div style="width: 30%">
     <strong>Following:<br></strong>
-    <% @followings = FollowUser.where(follower: @user.id) %>
+    <% @followings = FollowUser.where(follower_id: @user.id) %>
     <% @followings.each do |follow| %>
-      <h1>
+      <h3>
         <%= link_to follow.followed.name , user_path(follow.followed) %>
-      </h1>
+      </h3>
+      <%= link_to "Remove", user_path(follow.followed) %>
+    <% end %>
+  </div>
+  <div style="width: 30%">
+    <strong>Blocked:<br></strong>
+    <% @blockings = Block.where(owner_id: @user.id) %>
+    <% @blockings.each do |block| %>
+      <div style="width: 80%">
+        <h3>
+          <%= link_to block.blocked.nickname , user_path(block.blocked) %>
+        </h3>
+      </div>
+      <div style="width: 20%">
+        <%= link_to "Remove", user_path(block.blocked) %>
+      </div>
+    <% end %>
+  </div>
+  <div style="width: 30%">
+    <strong>Dumpster:<br></strong>
+    <% @dumpster = Post.where("user_id = ? AND dumped = ?",@user.id,true) %>
+    <% @dumpster.each do |post| %>
+      <h3>
+        <%= link_to post.title , post_path(post) %>
+      </h3>
+        <%= link_to "Remove", post_path(post) %>
     <% end %>
   </div>
 </div>
