@@ -31,7 +31,7 @@ $ rails server
 #### On work:
 * Header
 * Design / CSS
-* User:
+* User: (Gus)
     * Show / Edit
     * Register
 * Seeds (Gonza)
