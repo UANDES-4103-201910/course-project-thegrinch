@@ -28,21 +28,19 @@ $ rails server
 * Footer
 * User:
     * Show / Edit
+    * Register
 
 #### On work:
 * Header
-* Design / CSS
-    * Register
 * Seeds (Gonza)
-
+* Categories: (Gus)
+    * Show / Edit / Create
     
 #### Missing:
-* Search (General)
+* Search Post/User
 * Post:
     * Create
     * Show / Edit (with comments show / create / edit)
-* Categories:
-    * Show / Edit / Create
 * Achievements:
     * Show / Edit / Create
 #### Bugs:
