@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
-  get 'achievements/index'
-  get 'achievements/new'
-  get 'achievements/create'
-  get 'achievements/destroy'
-  get 'achievements/edit'
-  get 'categories/index'
-  get 'categories/new'
-  get 'categories/create'
-  get 'categories/destroy'
-  get 'categories/edit'
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
+  get 'achievements', to: 'achievements#index'
+  post 'achievements', to: 'achievements#create'
+  delete 'achievements/destroy', to: 'achievements#destroy'
+  update 'achievements/update', to: 'achievements#update'
+  get 'categories/index', to: 'categories#index'
+  post 'categories/create', to: 'categories#create'
+  delete 'categories/destroy', to: 'categories#destroy'
+  update 'categories/update', to: 'categories#update'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :comments
@@ -23,21 +18,6 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
   get '/users/:id/settings', to: 'users#edit'
-
-  get '/projects', to: 'projects#index'
-  delete '/project/:id', to: 'projects#destroy'
-
-  get '/categories', to: 'pages#index_categories'
-  post '/categories', to: 'pages#create_category'
-
-  get '/projects/:id/fund', to: 'funds#new'
-  post '/projects/:id/fund', to: 'funds#create'
-
-  # post '/users/:id/follow', to: 'users#follow'
-  # post '/projects/:id/favorite', to: 'projects#favorite'
-
-  post '/users/:id/projects/new', to: 'projects#create'
-  post '/projects/:id/promises/new', to: 'promises#create'
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
