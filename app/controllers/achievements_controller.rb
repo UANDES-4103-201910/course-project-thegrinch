@@ -7,9 +7,9 @@ class AchievementsController < ApplicationController
     @achievement = Achievement.new(post_params)
     respond_to do |format|
       if @achievement.save
-        format.html { redirect_to @achievement, notice: 'Achievement was successfully created.' }
+        format.html { redirect_to index, notice: 'Achievement was successfully created.' }
       else
-        format.html { render :new }
+        format.html { render index }
         format.json { render json: @achievement.errors, status: :unprocessable_entity }
       end
     end

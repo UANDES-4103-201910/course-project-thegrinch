@@ -7,9 +7,9 @@ class CategoriesController < ApplicationController
     @categorie = Categorie.new(post_params)
     respond_to do |format|
       if @categorie.save
-        format.html { redirect_to @categorie, notice: 'Categorie was successfully created.' }
+        format.html { redirect_to index, notice: 'Categorie was successfully created.' }
       else
-        format.html { render :new }
+        format.html { render index }
         format.json { render json: @categorie.errors, status: :unprocessable_entity }
       end
     end
