@@ -29,10 +29,10 @@ $ rails server
 * User:
     * Show / Edit
     * Register
+* Seeds
 
 #### On work:
-* Header
-* Seeds (Gonza)
+* Header (Gonza)
 * Categories: (Gus)
     * Show / Edit / Create
 * Achievements: (Gus)
