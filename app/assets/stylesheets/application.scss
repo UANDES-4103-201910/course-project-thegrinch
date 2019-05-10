@@ -20,6 +20,12 @@ $tono-secundario: white; // el fondo y todo el acompañamiento
 $tono-resalto: red; // botones y pequeños objetos
 $tono-letras: black;
 
+/* General: */
+body {
+  //background-image: url("grinch-wallpaper3.png");
+  background-color: $tono-secundario;
+}
+
 // Debugger (No cambiar)
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -33,19 +39,6 @@ $tono-letras: black;
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
-}
-
-#error_explanation {
-  color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
-  }
-}
-
-/* General: */
-body {
-  background: $tono-secundario;
 }
 
 /* Typography */
@@ -162,7 +155,13 @@ textarea {
   }
 }
 
-/* forms */
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
@@ -174,3 +173,4 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
+
