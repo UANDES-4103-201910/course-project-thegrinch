@@ -26,13 +26,12 @@ $ rails server
 #### Done:
 * Log in
 * Footer
-    
+* User:
+    * Show / Edit
 
 #### On work:
 * Header
 * Design / CSS
-* User: (Gus)
-    * Show / Edit
     * Register
 * Seeds (Gonza)
 
