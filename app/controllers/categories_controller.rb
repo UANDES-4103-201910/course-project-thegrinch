@@ -1,10 +1,10 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Categories.all
+    @categories = Category.all
   end
 
   def create
-    @categorie = Categorie.new(post_params)
+    @categorie = Category.new(post_params)
     respond_to do |format|
       if @categorie.save
         format.html { redirect_to index, notice: 'Categorie was successfully created.' }
