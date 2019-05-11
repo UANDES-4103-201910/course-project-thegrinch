@@ -34,12 +34,12 @@ $ rails server
     * Show / Edit / Create
 * Achievements:
     * Show / Edit / Create
+* Post:
+    * Create
+    * Edit
 
 #### On work:
 * Header (Gonza)
-* Post:
-    * Create (Gus)
-    * Edit (Gus)
     
 #### Missing:
 * Search Post/User
