@@ -40,9 +40,9 @@ $ rails server
 
 #### On work:
 * Header (Gonza)
+* Post: (Gus)
+    * Show (with comments show / create / edit)
     
 #### Missing:
 * Search Post/User
-* Post:
-    * Show (with comments show / create / edit)
 #### Bugs:
