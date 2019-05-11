@@ -37,11 +37,12 @@ $ rails server
 
 #### On work:
 * Header (Gonza)
+* Post:
+    * Create (Gus)
+    * Edit (Gus)
     
 #### Missing:
 * Search Post/User
 * Post:
-    * Create
     * Show (with comments show / create / edit)
-    * Edit
 #### Bugs:
