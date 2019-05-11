@@ -30,13 +30,13 @@ $ rails server
     * Show / Edit
     * Register
 * Seeds
+* Categories:
+    * Show / Edit / Create
+* Achievements:
+    * Show / Edit / Create
 
 #### On work:
 * Header (Gonza)
-* Categories: (Gus)
-    * Show / Edit / Create
-* Achievements: (Gus)
-    * Show / Edit / Create
     
 #### Missing:
 * Search Post/User
