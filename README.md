@@ -39,11 +39,11 @@ $ rails server
 #### Testing:
 * Post:
     * Show (with comments show / create / edit)
+* Home
 #### On work:
 * Header (Gonza)
     
 #### Missing:
 * Search Post/User
 #### Bugs:
-* Home
 * Seed
