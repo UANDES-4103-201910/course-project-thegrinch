@@ -1,34 +1,46 @@
 <p id="notice"><%= notice %></p>
+<div class="row jumbotron">
+  <div style="width: 18%">
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user %>
-</p>
+  </div>
+  <div>
+    <h2>
+      <%= @post.title %>
+      <%= link_to 'Edit', edit_post_path(@post) %>
+    </h2>
+    <h5>
+      By
+      <%= @post.user.nickname %>
+      at
+        <%= @post.location %>
+    </h5>
+    <p>
+      <%= @post.description %>
+      <%= link_to 'Edit', edit_post_path(@post) %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @post.description %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @post.location %>
-</p>
-
-<p>
-  <strong>Dumped:</strong>
-  <%= @post.dumped %>
-</p>
-
-<p>
-  <strong>Grinchrate:</strong>
-  <%= @post.grinchrate %>
-</p>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<div class="data_field">
+  <div>
+    <h3>Comments:</h3>
+  </div>
+  <div>
+    <%= @comments=Comment.where("post_id = ?",@post.id) %>
+    <%= @comments.each do |comment| %>
+      <div class="row">
+        <div style="width: 15%">
+          <img src="" class="img-circle" alt="commenter profile picture">
+        </div>
+        <div>
+          <h5>
+            <%= comment.user.nickname %>
+          </h5>
+          <p>
+            <%= comment.user.content %>
+          </p>
+        </div>
+      </div>
+    <%= end %>
+  </div>
+</div>
