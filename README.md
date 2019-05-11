@@ -42,5 +42,6 @@ $ rails server
 * Search Post/User
 * Post:
     * Create
-    * Show / Edit (with comments show / create / edit)
+    * Show (with comments show / create / edit)
+    * Edit
 #### Bugs:

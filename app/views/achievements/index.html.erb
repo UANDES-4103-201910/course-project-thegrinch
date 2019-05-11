@@ -1,2 +1,27 @@
-<h1>Achievements#index</h1>
-<p>Find me in app/views/achievements/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<h1>Achievements</h1>
+<div>
+  <% @achievements.each do |achievement| %>
+    <div class="row">
+      <div style="width: 50%">
+        <h3><%= achievement.title %></h3>
+        <p style="color: green"><%= achievement.description %></p>
+      </div>
+      <div>
+        <%= link_to 'Edit', achievements_update_path%>
+      </div>
+      <div>
+        <%= link_to 'Delete', achievements_destroy_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<hr>
+<%= form_with(model: @achievement, local: true) do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+  <%= form.submit 'Create Achievement' %>
+<% end %>

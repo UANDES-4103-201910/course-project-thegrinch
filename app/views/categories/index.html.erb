@@ -1,12 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Categories</h1>
-
-<% @categories.each do |category| %>
-  <%= link_to 'Edit', categories_update_path%>
-  <%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+<div>
+  <% @categories.each do |category| %>
+    <div class="row">
+      <div style="width: 50%">
+        <p><%= category.name %></p>
+      </div>
+      <div>
+        <%= link_to 'Edit', categories_update_path%>
+      </div>
+      <div>
+        <%= link_to 'Delete', categories_destroy_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<hr>
+<%= form_with(model: @category, local: true) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.submit 'Create Category' %>
 <% end %>
-
-<br>
-
-<%= link_to 'Create Category', categories_create_path %>
