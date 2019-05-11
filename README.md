@@ -29,7 +29,6 @@ $ rails server
 * User:
     * Show / Edit
     * Register
-* Seeds
 * Categories:
     * Show / Edit / Create
 * Achievements:
@@ -46,3 +45,5 @@ $ rails server
 #### Missing:
 * Search Post/User
 #### Bugs:
+* Home
+* Seed
