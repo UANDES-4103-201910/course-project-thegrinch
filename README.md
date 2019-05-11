@@ -36,11 +36,11 @@ $ rails server
 * Post:
     * Create
     * Edit
-
+#### Testing:
+* Post:
+    * Show (with comments show / create / edit)
 #### On work:
 * Header (Gonza)
-* Post: (Gus)
-    * Show (with comments show / create / edit)
     
 #### Missing:
 * Search Post/User
