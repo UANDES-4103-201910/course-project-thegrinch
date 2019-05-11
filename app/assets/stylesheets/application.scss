@@ -14,9 +14,9 @@
 
 @import "bootstrap";
 
-$tono-principal: green;
+$tono-principal: white;
 $tono-principal2: #025402;
-$tono-secundario: white; // el fondo y todo el acompañamiento
+$tono-secundario: #41ce60; // el fondo y todo el acompañamiento
 $tono-resalto: red; // botones y pequeños objetos
 $tono-letras: black;
 
@@ -80,20 +80,6 @@ label{
 
 /* Header */
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: $tono-secundario;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  &:hover {
-    color: white;
-    text-decoration: none;
-  }
-}
 
 .link-header{
   color: $tono-secundario
@@ -101,6 +87,59 @@ label{
 
 .navbar-fixed-top{
   background: $tono-principal;
+}
+
+
+.logos ul{
+  padding: 0;
+  list-style: none;
+  float: right;
+}
+
+.titulo{
+  color: $tono-resalto;
+  font-size: 30pt;
+  font-weight: bold;
+  letter-spacing: -1px;
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.slogan{
+  color: $tono-resalto;
+  font-size: 15pt;
+  font-weight: bold;
+  letter-spacing: -1px;
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.img-with-text{
+  text-align: justify;
+  width: 120px;
+}
+
+.img-with-text img{
+  display: block;
+  margin: 0 autp;
+  border-radius: 50%;
+}
+
+.img-with-text ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.img-with-text li{
+  display: inline-block;
+}
+#searchbutton{
+ color: red;
 }
 
 /* Footer */
@@ -182,4 +221,3 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
-

@@ -1,24 +1,33 @@
+<!DOCTYPE html>
+
+
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
-    <div class="navbar-header">
-      <%= link_to "The Grinch", root_path, id: "logo", class: "navbar-brand" %>
-    </div>
+    <div class="logos">
+      <a href="/"><img src="assets/logo.png" alt="logo" width="200px" height="150px"></a>
+        <ul>
+          <br>
+          <li><%= link_to "The Grinch", root_path, class: 'titulo'%></li>
+          <li><%= link_to "For the little Grinch inside us all", root_path, class: 'slogan'%></li>
+        </ul>
+      </div>
     <form class="navbar-form navbar-left" action="">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search" name="search">
         <div class="input-group-btn">
-          <button class="btn btn-default btn_link" type="submit">
+          <button type="submit" id="searchbutton">Search
             <i class="glyphicon glyphicon-search"></i>
           </button>
         </div>
       </div>
     </form>
-    <div class="row">
-      <ul class="nav navbar-nav">
-        <li><%= link_to "Log in", '/login' , class: "link-header"%></li>
-        <li><%= link_to "Register", '/register', class: "link-header" %></li>
-      </ul>
-      <img src="" class="img-circle" alt="logged profile picture" >
+    <div class="img-with-text">
+      <img src="assets/Karen.jpg" alt="Avatar" width="120" height="120">
+        <ul>
+          <li><%= link_to "Log in", '/login' , class: "link-header"%></li>
+          <li><%= link_to "Register", '/register', class: "link-header" %></li>
+        </ul>
+      
     </div>
   </div>
 </nav>
