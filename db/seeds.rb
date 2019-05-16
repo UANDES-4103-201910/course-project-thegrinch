@@ -7,11 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #Users
-u1 = User.create( nickname: 'Gary Just-Gary', email: 'gary1@gmail.com', password: 'gary', role: 'user', name: 'Gary', last_name: 'Just-Gary', bio: 'living the life as a Gary', location: 'Austin, US', geofence: '', profession: 'Beign Gary')
-u2 = User.create( nickname: 'Karen Libsenburger', email: 'germanw@gmail.com', password: 'karen', role: 'user', name: 'Karen', last_name: 'Libsenburger', bio: 'mostly german', location: 'Berlin, Germany', geofence: '', profession: 'Works at hydra')
-u3 = User.create( nickname: 'Barracius', email: 'rjgonzalez@miuandes.cl', password: 'admin', role: 'admin', name: 'Raimundo', last_name: 'Gonzalez', bio: 'worlds best man', location: 'Santiago, Chile', geofence: '', profession: 'Web developer')
+u1 = User.create( nickname: 'Gary Just-Gary', email: 'gary1@gmail.com', password: 'gary123', role: 'user', name: 'Gary', last_name: 'Just-Gary', bio: 'living the life as a Gary', location: 'Austin, US', geofence: '', profession: 'Beign Gary')
+u2 = User.create( nickname: 'Karen Libsenburger', email: 'germanw@gmail.com', password: 'karen123', role: 'user', name: 'Karen', last_name: 'Libsenburger', bio: 'mostly german', location: 'Berlin, Germany', geofence: '', profession: 'Works at hydra')
+u3 = User.create( nickname: 'Barracius', email: 'rjgonzalez@miuandes.cl', password: 'admin123', role: 'admin', name: 'Raimundo', last_name: 'Gonzalez', bio: 'worlds best man', location: 'Santiago, Chile', geofence: '', profession: 'Web developer')
 u4 = User.create( nickname: 'Nightmer', email: 'gpvicuna@miuandes.cl', password: '123456', role: 'admin', name: 'Gustavo', last_name: 'Vicuna', bio: 'worlds other best man', location: 'Santiago,Chile', geofence: '', profession: 'Web developer')
-u5 = User.create( nickname: 'Blockedguy', email: 'blockedguy@gmail.com', password: 'block', role: 'user', name: 'Toxic', last_name: 'Guy', bio: 'making everyone hate me', location: 'Circle 9, Hell', geofence: '', profession: 'Devil')
+u5 = User.create( nickname: 'Blockedguy', email: 'blockedguy@gmail.com', password: 'block123', role: 'user', name: 'Toxic', last_name: 'Guy', bio: 'making everyone hate me', location: 'Circle 9, Hell', geofence: '', profession: 'Devil')
 
 #Posts
 p1 = Post.create( user: u1, title: 'Beign Gary sucks', description: 'Summary of reasons why beign Gary sucks', location: 'Austin, US', dumped: false, grinchrate: 0)
