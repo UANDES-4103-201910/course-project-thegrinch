@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="row jumbotron">
   <div style="width: 18%">
     <img src="" class="img-circle" alt="profile picture">
@@ -56,37 +54,45 @@
 
 <div class="row">
   <div style="width: 30%">
-    <strong>Following:<br></strong>
-    <% @followings = FollowUser.where(follower_id: @user.id) %>
-    <% @followings.each do |follow| %>
-      <h3>
-        <%= link_to follow.followed.name , user_path(follow.followed) %>
-      </h3>
-      <%= link_to "Remove", user_path(follow.followed) %>
-    <% end %>
-  </div>
-  <div style="width: 30%">
-    <strong>Blocked:<br></strong>
-    <% @blockings = Block.where(owner_id: @user.id) %>
-    <% @blockings.each do |block| %>
-      <div style="width: 80%">
+    <h2>Following:<br></h2>
+    <div class="row">
+      <% @followings = FollowUser.where(follower_id: @user.id) %>
+      <% @followings.each do |follow| %>
         <h3>
-          <%= link_to block.blocked.nickname , user_path(block.blocked) %>
+          <%= link_to follow.followed.name , user_path(follow.followed) %>
         </h3>
-      </div>
-      <div style="width: 20%">
-        <%= link_to "Remove", user_path(block.blocked) %>
-      </div>
-    <% end %>
+        <div>
+          <%= link_to "Remove", user_path(follow.followed) %>
+        </div>
+      <% end %>
+    </div>
   </div>
   <div style="width: 30%">
-    <strong>Dumpster:<br></strong>
-    <% @dumpster = Post.where("user_id = ? AND dumped = ?",@user.id,true) %>
-    <% @dumpster.each do |post| %>
-      <h3>
-        <%= link_to post.title , post_path(post) %>
-      </h3>
-        <%= link_to "Remove", post_path(post) %>
+    <h2>Blacklist:<br></h2>
+    <div class="row">
+      <% @blockings = Block.where(owner_id: @user.id) %>
+      <% @blockings.each do |block| %>
+          <h3>
+            <%= link_to block.blocked.nickname , user_path(block.blocked) %>
+          </h3>
+        <div>
+          <%= link_to "Remove", user_path(block.blocked) %>
+        </div>
     <% end %>
+    </div>
+  </div>
+  <div style="width: 30%">
+    <h2>Dumpster:<br></h2>
+    <div class="row">
+      <% @dumpster = Post.where("user_id = ? AND dumped = ?",@user.id,true) %>
+      <% @dumpster.each do |post| %>
+        <h3>
+          <%= link_to post.title , post_path(post) %>
+        </h3>
+        <div>
+          <%= link_to "Remove", post_path(post) %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
