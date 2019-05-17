@@ -1,17 +1,19 @@
 <div class="row jumbotron">
-  <div style="width: 18%">
+  <div style="width: 26%">
     <img src="" alt="post picture">
   </div>
-  <div>
-    <h2>
-      <%= @post.title %>
-    </h2>
-    <h5>
-      By
-      <%= link_to @post.user.nickname, user_path(@post.user)%>
-      at
-      <%= @post.location %>
-    </h5>
+  <div style="width: 72%">
+    <div style="height: 100px">
+      <h2>
+        <%= @post.title %>
+      </h2>
+      <h5>
+        By
+        <%= link_to @post.user.nickname, user_path(@post.user)%>
+        at
+        <%= @post.location %>
+      </h5>
+    </div>
     <div>
       <p>
         <%= @post.description %>
@@ -21,23 +23,23 @@
   </div>
 </div>
 
-<div class="data_field">
+<div>
   <div>
     <h3>Comments:</h3>
   </div>
   <div>
-    <%= @comments=Comment.where("post_id = ?",@post.id) %>
-    <%= @comments.each do |comment| %>
+    <% @comments=Comment.where("post_id = ?",@post.id) %>
+    <% @comments.each do |comment| %>
       <div class="row">
         <div style="width: 15%">
           <img src="" class="img-circle" alt="commenter profile picture">
+          <p>
+            <%= link_to comment.user.nickname, user_path(comment.user) %>
+          </p>
         </div>
         <div>
-          <h5>
-            <%= comment.user.nickname %>
-          </h5>
           <p>
-            <%= comment.user.content %>
+            <%= comment.content %>
           </p>
         </div>
       </div>

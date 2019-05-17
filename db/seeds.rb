@@ -20,11 +20,11 @@ p3 = Post.create( user: u3, title: 'Welcome!', description: 'Welcome to our new 
 p4 = Post.create( user: u5, title: 'Only admins can read this', description: 'Im blocked by everyone except admins', location: 'Circle 9, Hell', dumped: false, grinchrate: 0)
 
 #Comments
-c1 = Comment.create( user: u2, post: p1, comment: nil, content: 'I hate beign a Karen too')
-c2 = Comment.create( user: u1, post: p1, comment: c1, content: 'I guess Karen sucks too')
-c3 = Comment.create( user: u3, post: p3, comment: nil, content: 'Feel free to tell us what you think of the website')
-c4 = Comment.create( user: u1, post: p2, comment: nil, content: 'I hate automatic doors too!')
-c5 = Comment.create( user: u2, post: p2, comment: c4, content: 'ikr')
+c1 = Comment.create( user: u2, post: p1, content: 'I hate beign a Karen too')
+c2 = Comment.create( user: u1, post: p1, content: 'I guess Karen sucks too')
+c3 = Comment.create( user: u3, post: p3, content: 'Feel free to tell us what you think of the website')
+c4 = Comment.create( user: u1, post: p2, content: 'I hate automatic doors too!')
+c5 = Comment.create( user: u2, post: p2, content: 'ikr')
 
 #Upvote posts
 up1 = UpvotePost.create( user: u1, post: p2)
