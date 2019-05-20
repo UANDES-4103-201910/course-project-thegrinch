@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  extend Devise::Models
+
   require 'uri'
 
   has_many :comments
@@ -18,10 +20,15 @@ class User < ApplicationRecord
   has_many :mark_innapropiateds
 
   validates :nickname, :email, :password, presence: true
-  validates :nickname, length: { minimum: 2 }
+  validates :nickname, length: { minimum: 2 }, uniqueness: {case_sensitive: true}
   validates :name, length: { minimum: 2 }
   validates :bio, length: { maximum: 500 }
   validates :password, length: { in: 6..20 }
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: {case_sensitive: true}
+
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 
 end

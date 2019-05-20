@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'achievements', to: 'achievements#index'
   post 'achievements', to: 'achievements#create'
   delete 'achievements/destroy', to: 'achievements#destroy'
