@@ -27,28 +27,23 @@ $ rails server
 #### Testing:
 #### On work:
 #### Missing:
-1. System Access
-    * Log in with email address
-    * Log in with Google authentication
-    * Log out
-2. Registration
-    * User registration
-    * Change password
-    * Password recovery
+* Devise:
+    1. System Access
+        * Log in with email address
+        * Log in with Google authentication
+        * Log out
+    2. Registration
+        * User registration
+        * Change password
+        * Password recovery
 3. User Administration
-    * New user
     * View user details
         * Last access
         * User role
     * Edit User
         * Change password
     * Delete user
-4. System Administration
-    * New administrator
-    * View administrator details
-    * Edit administrator
-        * Change password
-    * Delete administrator
+    * Make user an admin
 5. User Profile
     * View user profile
     * Edit user profile
