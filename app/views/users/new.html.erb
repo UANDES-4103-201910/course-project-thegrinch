@@ -1,6 +1,7 @@
 <% provide(:title, "Register") %>
 <h1>Register</h1>
-
-<%= render 'form', user: @user %>
+<div class="content">
+  <%= render 'form', user: @user %>
+</div>
 
 <%= link_to 'Cancel', home_path %>

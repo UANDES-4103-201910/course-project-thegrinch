@@ -14,7 +14,7 @@
 
 @import "bootstrap";
 
-$tono-principal: white;
+$tono-principal: rgb(229, 229, 229);
 $tono-principal2: #025402;
 $tono-secundario: #41ce60; // el fondo y todo el acompañamiento
 $tono-resalto: red; // botones y pequeños objetos
@@ -126,6 +126,9 @@ label{
  color: red;
 }
 
+.content{
+  background-color: $tono-principal;
+}
 /* Footer */
 
 footer {
