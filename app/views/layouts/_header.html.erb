@@ -24,8 +24,8 @@
     <div class="img-with-text">
       <%= link_to image_tag("Karen.jpg", border: 0, size: "120x120"), home_path %>
         <ul>
-          <li><%= link_to "Log in", '/login' , class: "link-header"%></li>
-          <li><%= link_to "Register", '/register', class: "link-header" %></li>
+          <li><%= link_to "Log in", new_user_session_path , class: "link-header"%></li>
+          <li><%= link_to "Register", new_user_registration_path, class: "link-header" %></li>
         </ul>
       
     </div>

@@ -20,10 +20,6 @@ Rails.application.routes.draw do
   post '/register', to: 'users#create'
   get '/users/:id/settings', to: 'users#edit'
 
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
-
   root 'static_pages#home'
 
 end
