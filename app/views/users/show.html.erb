@@ -6,93 +6,123 @@
     <p>
       <strong>Username:</strong>
       <%= @user.nickname %>
-      <%= link_to 'Edit', edit_user_path(@user) %>
     </p>
 
     <p>
       <strong>Name:</strong>
       <%= @user.name %>
       <%= @user.last_name %>
-      <%= link_to 'Edit', edit_user_path(@user) %>
     </p>
 
     <p>
       <strong>Email:</strong>
       <%= @user.email %>
-      <%= link_to 'Edit', edit_user_path(@user) %>
     </p>
   </div>
   <div style="width: 28%">
     <p>
       <strong>Profession:</strong>
       <%= @user.profession %>
-      <%= link_to 'Edit', edit_user_path(@user) %>
     </p>
     <p>
       <strong>Location:</strong>
       <%= @user.location %>
-      <%= link_to 'Edit', edit_user_path(@user) %>
+
     </p>
+    <% if user_signed_in?  %>
+      <% if current_user==@user or current_user.role=="admin" %>
+        <h4><%= link_to 'Edit Profile', edit_user_path(@user) %></h4>
+      <% end %>
+    <% end %>
   </div>
-  <div style="width: 18%">
-    <div>
-      <%= link_to 'Follow', register_path, class: "btn btn-primary" %>
-    </div>
-    <div>
-      <%= link_to 'Block', register_path, class: "btn btn-primary" %>
-    </div>
-  </div>
+  <% if user_signed_in?  %>
+    <% if current_user==@user %>
+
+    <% else %>
+      <div style="width: 18%">
+        <div>
+          <%= link_to 'Follow', register_path, class: "btn btn-primary" %>
+        </div>
+        <div>
+          <%= link_to 'Block', register_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
 
 <div class="data_field">
   <p>
-    <strong>Biography:<br></strong>
+    <h3>Biography:<br></h3>
     <%= @user.bio %>
-    <%= link_to 'Edit', edit_user_path(@user) %>
   </p>
 </div>
-
-<div class="row">
-  <div style="width: 30%">
-    <h2>Following:<br></h2>
-    <div class="row">
-      <% @followings = FollowUser.where(follower_id: @user.id) %>
-      <% @followings.each do |follow| %>
-        <h3>
-          <%= link_to follow.followed.name , user_path(follow.followed) %>
-        </h3>
-        <div>
-          <%= link_to "Remove", user_path(follow.followed) %>
-        </div>
-      <% end %>
+<div>
+  <h3><%= @user.nickname %>'s Complaints:</h3>
+  <% posts = Post.where(user_id: @user.id) %>
+  <% if posts==[] %>
+    <div class="content">
+      <p><%= @user.nickname %> hasn't post a complaint yet.</p>
     </div>
-  </div>
-  <div style="width: 30%">
-    <h2>Blacklist:<br></h2>
-    <div class="row">
-      <% @blockings = Block.where(owner_id: @user.id) %>
-      <% @blockings.each do |block| %>
+  <% else %>
+    <% posts.each do |post| %>
+        <div class="content">
           <h3>
-            <%= link_to block.blocked.nickname , user_path(block.blocked) %>
+            <%= link_to post.title , post_path(post) %>
           </h3>
-        <div>
-          <%= link_to "Remove", user_path(block.blocked) %>
-        </div>
+          <p>
+            <%= post.description %>
+          </p>
+      </div>
     <% end %>
-    </div>
-  </div>
-  <div style="width: 30%">
-    <h2>Dumpster:<br></h2>
-    <div class="row">
-      <% @dumpster = Post.where("user_id = ? AND dumped = ?",@user.id,true) %>
-      <% @dumpster.each do |post| %>
-        <h3>
-          <%= link_to post.title , post_path(post) %>
-        </h3>
-        <div>
-          <%= link_to "Remove", post_path(post) %>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <% end %>
 </div>
+<% if user_signed_in?  %>
+  <% if current_user==@user or current_user.role=="admin" %>
+    <div class="row">
+      <div style="width: 30%">
+        <h3>Following:<br></h3>
+        <div class="row">
+          <% followings = FollowUser.where(follower_id: @user.id) %>
+          <% followings.each do |follow| %>
+            <h3>
+              <%= link_to follow.followed.name , user_path(follow.followed) %>
+            </h3>
+            <div>
+              <%= link_to "Remove", user_path(follow.followed) %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div style="width: 30%">
+        <h3>Blacklist:<br></h3>
+        <div class="row">
+          <% @blockings = Block.where(owner_id: @user.id) %>
+          <% @blockings.each do |block| %>
+            <h3>
+              <%= link_to block.blocked.nickname , user_path(block.blocked) %>
+            </h3>
+            <div>
+              <%= link_to "Remove", user_path(block.blocked) %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div style="width: 30%">
+        <h3>Dumpster:<br></h3>
+        <div class="row">
+          <% @dumpster = Post.where("user_id = ? AND dumped = ?",@user.id,true) %>
+          <% @dumpster.each do |post| %>
+            <h3>
+              <%= link_to post.title , post_path(post) %>
+            </h3>
+            <div>
+              <%= link_to "Remove", post_path(post) %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+  <% end  %>
+<% end  %>
