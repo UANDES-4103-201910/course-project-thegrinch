@@ -23,16 +23,16 @@
     </form>
     <div class="img-with-text">
       <%if user_signed_in?  %>
-        <%= link_to image_tag("Karen.jpg", border: 0, size: "120x120"), home_path %>
+        <%= link_to image_tag("Karen.jpg", border: 0, size: "120x120"), user_path(current_user) %>
         <ul>
-          <li><%= current_user.nickname %></li>
+          <li><%= link_to current_user.nickname, user_path(current_user) %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete  %></li>
         </ul>
       <% else %>
-        <%= link_to image_tag("Karen.jpg", border: 0, size: "120x120"), home_path %>
+        <%= link_to image_tag("default-user.png", border: 0, size: "120x120"), home_path %>
         <ul>
-          <li><%= link_to "Log in", new_user_session_path , class: "link-header"%></li>
-          <li><%= link_to "Register", new_user_registration_path, class: "link-header" %></li>
+          <li><%= link_to "Sign in", new_user_session_path , class: "link-header"%></li>
+          <li><%= link_to "Sign up", new_user_registration_path, class: "link-header" %></li>
         </ul>
       <% end %>
       
