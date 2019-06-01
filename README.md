@@ -15,6 +15,7 @@ Next, migrate the database:
 
 ```
 $ rails db:migrate
+$ rails db:seed
 ```
 
 Finally, you'll be ready to run the app in a local server:
@@ -24,19 +25,27 @@ $ rails server
 ```
 ## Progress
 #### Done:
-#### Testing:
-#### On work:
-* Devise: (Gus)
+* Devise:
     1. System Access
         * Log in with email address
-        * Log in with Google authentication
         * Log out
-    2. Registration
+#### Testing:
+#### On work:
+   2. Registration (Gus)
         * User registration
         * Change password
-        * Password recovery
+   5. User Profile (Gus)
+       * View user profile
+       * Edit user profile
+           * Edit user fields: name, bio, location.
+       * View posts
 #### Missing:
-3. User Administration
+* Devise:
+    1. System Access
+        * Log in with Google authentication
+    2. Registration
+        * Password recovery
+3. User Administration (Gus)
     * View user details
         * Last access
         * User role
@@ -44,11 +53,6 @@ $ rails server
         * Change password
     * Delete user
     * Make user an admin
-5. User Profile
-    * View user profile
-    * Edit user profile
-        * Edit user fields: name, bio, location.
-    * View posts
 6. Posts
     * View post
         * View title, description, location, and creation date
