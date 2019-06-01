@@ -26,8 +26,7 @@ $ rails server
 #### Done:
 #### Testing:
 #### On work:
-#### Missing:
-* Devise:
+* Devise: (Gus)
     1. System Access
         * Log in with email address
         * Log in with Google authentication
@@ -36,6 +35,7 @@ $ rails server
         * User registration
         * Change password
         * Password recovery
+#### Missing:
 3. User Administration
     * View user details
         * Last access

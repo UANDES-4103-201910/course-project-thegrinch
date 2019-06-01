@@ -14,9 +14,14 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
 
+  devise_scope :user do
+    get '/register', to: 'devise/registrations#new'
+    get '/sign_up', to: 'devise/registrations#new'
+    get '/sign_in', to: 'devise/sessions#new'
+  end
+
   get '/home', to: 'static_pages#home'
   get '/about', to: 'static_pages#about'
-  get '/register', to: 'users#new'
   post '/register', to: 'users#create'
   get '/users/:id/settings', to: 'users#edit'
 
