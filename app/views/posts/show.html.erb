@@ -18,25 +18,32 @@
     <div>
       <p>
         <%= @post.description %>
-        <%= link_to 'Edit', edit_post_path(@post) %>
       </p>
     </div>
-    <div class="row">
-      <div>
-        <%= button_to 'Upvote', post_upvotepost_index_path(@post), method: :post %>
-        <%= @post.upvote_count %>
-      </div>
-      <div>
-        <%= button_to 'Downvote', post_downvotepost_index_path(@post), method: :post%>
-        <%= @post.downvote_count %>
-      </div>
-      <div>
-        <%= button_to 'Add to Favorites', post_follow_posts_path(@post), method: :post%>
-      </div>
-      <div>
-        <%= button_to 'Report', post_mark_innapropiateds_path(@post), method: :post%>
-      </div>
-    </div>
+    <% if user_signed_in? %>
+      <% if @post.user==current_user or current_user.role=="admin"%>
+        <%= link_to 'Edit', edit_post_path(@post) %>
+      <% end %>
+      <% if @post.user==current_user %>
+      <% else %>
+        <div class="row">
+          <div>
+            <%= button_to 'Upvote', post_upvotepost_index_path(@post), method: :post %>
+            <%= @post.upvote_count %>
+          </div>
+          <div>
+            <%= button_to 'Downvote', post_downvotepost_index_path(@post), method: :post%>
+            <%= @post.downvote_count %>
+          </div>
+          <div>
+            <%= button_to 'Add to Favorites', post_follow_posts_path(@post), method: :post%>
+          </div>
+          <div>
+            <%= button_to 'Report', post_mark_innapropiateds_path(@post), method: :post%>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
 

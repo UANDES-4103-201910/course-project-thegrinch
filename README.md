@@ -52,15 +52,14 @@ $ rails server
         * View upvotes and downvotes
     * Edit post
     * View publisher profile
-7. Comment threads for posts
-    * View author profile
-#### Testing:
-#### On work:
-6. Posts (Gus)
     * Upvote post
     * Downvote post
     * Follow post
     * Mark post as inappropriate
+7. Comment threads for posts
+    * View author profile
+#### Testing:
+#### On work:
 #### Missing:
 1. System Access
     * Log in with Google authentication
