@@ -68,7 +68,6 @@ $ rails server
 6. Posts
     * View post
         * View file attachments
-    * Delete post
 7. Comment threads for posts
     * Add comment to report comments thread
     * Edit comment in report comments thread
@@ -81,8 +80,9 @@ $ rails server
     * User registration
 3. User Administration
     * Delete user
-    * Create user
     * Make user an admin
 4. System Administration
     * New administrator
     * Delete administrator
+6. Posts 
+    * Delete post
