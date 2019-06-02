@@ -34,10 +34,13 @@ $ rails server
 3. User Administration
     * Edit User
     * Change password
-    * Make user an admin
     * View user details
         * Last access
         * User role
+4. System Administration
+    * View administrator details
+    * Edit administrator
+        * Change password
 5. User Profile
     * View user profile
     * Edit user profile
@@ -50,6 +53,8 @@ $ rails server
     * View author profile
 #### Testing:
 #### On work:
+3. User Administration (Gus)
+    * Make user an admin
 6. Posts (Gus)
     * View post
         * View title, description, location, and creation date
@@ -77,6 +82,9 @@ $ rails server
 #### Bugs:
 2. Registration
     * User registration
-3. User Administration (Gus)
+3. User Administration
     * Delete user
     * Create user
+4. System Administration
+    * New administrator
+    * Delete administrator
