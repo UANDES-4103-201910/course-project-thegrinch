@@ -23,18 +23,18 @@
     </div>
     <div class="row">
       <div>
-        <%= link_to 'Upvote', register_path, class: "btn btn-primary" %><br>
+        <%= button_to 'Upvote', post_upvotepost_index_path(@post), method: :post %>
         <%= @post.upvote_count %>
       </div>
       <div>
-        <%= link_to 'Downvote', register_path, class: "btn btn-primary" %><br>
+        <%= button_to 'Downvote', post_downvotepost_index_path(@post), method: :post%>
         <%= @post.downvote_count %>
       </div>
       <div>
-        <%= link_to 'Add to Favorites', register_path, class: "btn btn-primary" %>
+        <%= button_to 'Add to Favorites', post_follow_posts_path(@post), method: :post%>
       </div>
       <div>
-        <%= link_to 'Report', register_path, class: "btn btn-primary" %>
+        <%= button_to 'Report', post_mark_innapropiateds_path(@post), method: :post%>
       </div>
     </div>
   </div>

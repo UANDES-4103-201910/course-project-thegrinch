@@ -1,8 +1,8 @@
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :upvote_posts, :as => :likable_post
-  has_many :downvote_posts, :as => :unlikable_post
-  has_many :mark_innapropiateds, :as => :inappropriate
+  has_many :upvote_posts, dependent: :destroy
+  has_many :downvote_posts, dependent: :destroy
+  has_many :mark_innapropiateds, :as => :inappropriate, dependent: :destroy
 
   validates :user_id, presence: true ,numericality: {only_integer: true}
   validates :title, :description, presence: true
