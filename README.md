@@ -47,6 +47,9 @@ $ rails server
        * Edit user fields: name, bio, location.
     * View posts
 6. Posts
+    * View post
+        * View title, description, location, and creation date
+        * View upvotes and downvotes
     * Edit post
     * View publisher profile
 7. Comment threads for posts
@@ -56,13 +59,6 @@ $ rails server
 3. User Administration (Gus)
     * Make user an admin
 6. Posts (Gus)
-    * View post
-        * View title, description, location, and creation date
-        * View post location on map
-        * View upvotes and downvotes
-        * View images
-        * View file attachments
-    * Delete post
     * Upvote post
     * Downvote post
     * Follow post
@@ -72,6 +68,10 @@ $ rails server
     * Log in with Google authentication
 2. Registration
     * Password recovery (devise)
+6. Posts
+    * View post
+        * View file attachments
+    * Delete post
 7. Comment threads for posts
     * Add comment to report comments thread
     * Edit comment in report comments thread

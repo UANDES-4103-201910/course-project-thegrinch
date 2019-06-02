@@ -23,10 +23,12 @@
     </div>
     <div class="row">
       <div>
-        <%= link_to 'Upvote', register_path, class: "btn btn-primary" %>
+        <%= link_to 'Upvote', register_path, class: "btn btn-primary" %><br>
+        <%= @post.upvote_count %>
       </div>
       <div>
-        <%= link_to 'Downvote', register_path, class: "btn btn-primary" %>
+        <%= link_to 'Downvote', register_path, class: "btn btn-primary" %><br>
+        <%= @post.downvote_count %>
       </div>
       <div>
         <%= link_to 'Add to Favorites', register_path, class: "btn btn-primary" %>
