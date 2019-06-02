@@ -1,37 +1,39 @@
-<p id="notice"><%= notice %></p>
-<div class="page-header">
-  <h1>Registered Users</h1>
-</div>
+<% if user_signed_in?  %>
+  <% if current_user.role=="admin"%>
+    <p id="notice"><%= notice %></p>
+    <div class="page-header">
+      <h1>Registered Users</h1>
+    </div>
 
-<table class="table table-bordered table-hover">
-  <thead>
-    <tr>
-      <th>Nickname</th>
-      <th>Email</th>
-      <th>Password</th>
-      <th>Role</th>
-      <th>Name</th>
-      <th>Last name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Nickname</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Role</th>
+          <th>Last sign in</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.nickname %></td>
-        <td><%= user.email %></td>
-        <td><%= user.password %></td>
-        <td><%= user.role %></td>
-        <td><%= user.name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'Create a new registered user', new_user_path %>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.nickname %></td>
+            <td><%= user.email %></td>
+            <td><%= user.password %></td>
+            <td><%= user.role %></td>
+            <td><%= user.last_sign_in_at %></td>
+            <td><%= link_to 'Show', user %></td>
+            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <br>
+    <%= link_to 'Create a new registered user', new_user_registration_path %>
+  <% else %>
+    <p>You don't have access to this page.</p>
+  <% end %>
+<% end %>
