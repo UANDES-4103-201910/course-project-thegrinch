@@ -26,11 +26,13 @@
             <td><%= link_to 'Show', user %></td>
             <td>
               <% if user.role=='user' %>
-                <% @user = user %>
-                <%= form_for(:user) do |f| %>
-                  <% f.hidden_field(:role, value: 'admin') %>
-                  <%= f.submit "Make admin" %>
-                <% end %>
+                <%= link_to("Make Admin", user_path(user,"user[role]" => "admin"), :method => :put, :confirm => "Are you sure?") %>
+                        <% if false %>
+                        <%= form_with(model: user, local: true, action: 'make_admin') do |form| %>
+                          <%= form.hidden_field :role, value: 'admin' %>
+                          <%= form.submit "Make Admin", class: 'btn btn-primary' %>
+                          <% end %>
+                        <% end %>
               <% end %>
             </td>
             <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

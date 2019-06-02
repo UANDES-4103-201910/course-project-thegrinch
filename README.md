@@ -56,8 +56,6 @@ $ rails server
     * View author profile
 #### Testing:
 #### On work:
-3. User Administration (Gus)
-    * Make user an admin
 6. Posts (Gus)
     * Upvote post
     * Downvote post
@@ -85,6 +83,7 @@ $ rails server
 3. User Administration
     * Delete user
     * Create user
+    * Make user an admin
 4. System Administration
     * New administrator
     * Delete administrator
