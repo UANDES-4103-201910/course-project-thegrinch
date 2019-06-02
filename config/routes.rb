@@ -18,8 +18,10 @@ Rails.application.routes.draw do
     get '/register', to: 'devise/registrations#new'
     get '/sign_up', to: 'devise/registrations#new'
     get '/sign_in', to: 'devise/sessions#new'
+    get '/log_in', to: 'devise/sessions#new'
   end
 
+  put '/users/makeadmin', to: 'users#make_admin'
   get '/home', to: 'static_pages#home'
   get '/about', to: 'static_pages#about'
   post '/register', to: 'users#create'

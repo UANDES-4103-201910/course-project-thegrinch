@@ -61,6 +61,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def make_admin
+    respond_to do |format|
+      if @user.update(role: 'admin')
+        format.html { redirect_to index, notice: 'User was successfully updated.' }
+      else
+        format.html { render :index }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
