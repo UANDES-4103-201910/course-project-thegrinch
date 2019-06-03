@@ -1,6 +1,30 @@
 <% provide(:title, "Sign in") %>
 <h2>Sign in</h2>
+<body>
+  <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=2959011077472773&autoLogAppEvents=1"></script>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '2959011077472773',
+        cookie     : true,
+        xfbml      : true,
+        version    : '21'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
 
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+</body>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -15,6 +39,7 @@
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
+  <div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
