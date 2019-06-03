@@ -10,6 +10,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :location
       t.string :geofence
       t.string :profession
+      t.string :profile_pic
 
       t.timestamps
     end

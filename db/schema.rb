@@ -158,6 +158,7 @@ ActiveRecord::Schema.define(version: 2019_05_20_002144) do
     t.string "location"
     t.string "geofence"
     t.string "profession"
+    t.string "profile_pic"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
