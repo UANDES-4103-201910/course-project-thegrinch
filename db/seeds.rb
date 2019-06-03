@@ -17,7 +17,7 @@ u5 = User.create( nickname: 'Blockedguy', email: 'blockedguy@gmail.com', passwor
 p1 = Post.create( user: u1, title: 'Beign Gary sucks', description: 'Summary of reasons why beign Gary sucks', location: 'Austin, US', dumped: false, grinchrate: 0)
 p2 = Post.create( user: u2, title: 'I hate automatic doors', description: 'Number of reasons why automatic doors are designed by the devil', location: 'Berlin, Germany', dumped: false, grinchrate: 0)
 p3 = Post.create( user: u3, title: 'Welcome!', description: 'Welcome to our new Complaints page! Hope you guys and girls like it', location: 'Santiago, Chile', dumped: false, grinchrate: 0)
-p4 = Post.create( user: u5, title: 'Only admins can read this', description: 'Im blocked by everyone except admins', location: 'Circle 9, Hell', dumped: false, grinchrate: 0)
+p4 = Post.create( user: u5, title: "Gary and Karen can't read this", description: 'Im blocked by them', location: 'Circle 9, Hell', dumped: false, grinchrate: 0)
 
 #Comments
 c1 = Comment.create( user: u2, post: p1, content: 'I hate beign a Karen too')
