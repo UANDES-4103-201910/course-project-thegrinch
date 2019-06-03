@@ -62,19 +62,17 @@ class UsersController < ApplicationController
   end
 
   def make_admin
-    respond_to do |format|
-      if @user.update(role: 'admin')
-        format.html { redirect_to index, notice: 'User was successfully updated.' }
-      else
-        format.html { render :index }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
+    @user.update(role: "admin")
+    format.html { redirect_to users_url, notice:"User has been promoted to admin"}
   end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      begin
+        @user = User.find(params[:id])
+      rescue ActiveRecord::RecordNotFound => e
+        @user = User.find(params[:user_id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

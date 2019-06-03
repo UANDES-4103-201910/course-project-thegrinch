@@ -14,7 +14,7 @@ u4 = User.create( nickname: 'Nightmer', email: 'gpvicuna@miuandes.cl', password:
 u5 = User.create( nickname: 'Blockedguy', email: 'blockedguy@gmail.com', password: 'block123', role: 'user', name: 'Toxic', last_name: 'Guy', bio: 'making everyone hate me', location: 'Circle 9, Hell', geofence: '', profession: 'Devil', profile_pic: 'default-user.png')
 
 #Posts
-p1 = Post.create( user: u1, title: 'Beign Gary sucks', description: 'Summary of reasons why beign Gary sucks', location: 'Austin, US', dumped: false, grinchrate: 0)
+p1 = Post.create( user: u1, title: 'Being Gary sucks', description: 'Summary of reasons why being Gary sucks', location: 'Austin, US', dumped: false, grinchrate: 0)
 p2 = Post.create( user: u2, title: 'I hate automatic doors', description: 'Number of reasons why automatic doors are designed by the devil', location: 'Berlin, Germany', dumped: false, grinchrate: 0)
 p3 = Post.create( user: u3, title: 'Welcome!', description: 'Welcome to our new Complaints page! Hope you guys and girls like it', location: 'Santiago, Chile', dumped: false, grinchrate: 0)
 p4 = Post.create( user: u5, title: "Gary and Karen can't read this", description: 'Im blocked by them', location: 'Circle 9, Hell', dumped: false, grinchrate: 0)
