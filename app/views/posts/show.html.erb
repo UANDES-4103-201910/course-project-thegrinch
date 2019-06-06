@@ -67,10 +67,38 @@
             <%= comment.content %>
           </h5>
         </div>
+        <% if comment.user==current_user or current_user.role == "admin"%>
+          <div>
+            <%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>
-  <div>
+  <% if user_signed_in? %>
+    <%  comment = Comment.new %>
+    <%= form_with(model: comment, local: true) do |form| %>
+      <% if comment.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
-  </div>
+          <ul>
+            <% comment.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="row">
+        <%= form.hidden_field :user_id, value: current_user.id %>
+        <%= form.hidden_field :post_id, value: @post.id %>
+        <div class="field">
+          <%= form.text_field :content %>
+        </div>
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>

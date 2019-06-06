@@ -58,11 +58,10 @@ $ rails server
     * Mark post as inappropriate
 7. Comment threads for posts
     * View author profile
+    * Add comment to report comments thread
+    * Delete comment
 #### Testing:
 #### On work:
-7. Comment threads for posts (Gus)
-    * Add comment to report comments thread
-    * Edit comment in report comments thread
 #### Missing:
 1. System Access
     * Log in with Google authentication
@@ -73,6 +72,7 @@ $ rails server
     * View post
         * View file attachments
 7. Comment threads for posts
+    * Edit comment in report comments thread
     * Tag user in comment
 8. User Search
     * Search by nickname
