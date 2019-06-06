@@ -60,21 +60,31 @@ $ rails server
     * View author profile
 #### Testing:
 #### On work:
+7. Comment threads for posts (Gus)
+    * Add comment to report comments thread
+    * Edit comment in report comments thread
 #### Missing:
 1. System Access
     * Log in with Google authentication
 2. Registration
     * Password recovery (devise)
+    * Add profile image
 6. Posts
     * View post
         * View file attachments
 7. Comment threads for posts
-    * Add comment to report comments thread
-    * Edit comment in report comments thread
     * Tag user in comment
 8. User Search
     * Search by nickname
     * Search by location
+9. Categories
+    * Create Category
+    * Delete Category
+    * Search by category
+10. Achievements
+    * Create Achievements
+    * Delete Achievements
+    * Win Achievements
 #### Bugs:
 2. Registration
     * User registration
