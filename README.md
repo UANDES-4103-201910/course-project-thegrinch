@@ -74,13 +74,15 @@ $ rails server
 6. Posts
     * View post
         * View file attachments
+        * View category
+    * Add category to post
+    * Remove category to post
 7. Comment threads for posts
     * Edit comment in report comments thread
     * Tag user in comment
 9. Categories
     * Create Category
     * Delete Category
-    * Search by category
 10. Achievements
     * Create Achievements
     * Delete Achievements
