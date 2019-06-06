@@ -1,0 +1,12 @@
+<div class="row content">
+  <div style="width: 15%">
+    <div class="img-with-text">
+      <%= link_to image_tag(user.profile_pic, border: 0, size: "50x50"), user_path(user) %>
+    </div>
+  </div>
+  <div>
+      <p>
+        <%= link_to user.nickname, user_path(user) %>
+      </p>
+  </div>
+</div>

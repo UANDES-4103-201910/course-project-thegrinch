@@ -11,16 +11,7 @@
         <li><%= link_to "For the little Grinch inside us all", root_path, class: 'slogan'%></li>
       </ul>
     </div>
-    <form class="navbar-form navbar-left" action="">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" name="search">
-        <div class="input-group-btn">
-          <button type="submit" id="searchbutton">Search
-            <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
+    <%= button_to "Search your desired complaint!", new_search_path, method: :get %>
     <div class="img-with-text">
       <%if user_signed_in?  %>
         <%= link_to image_tag(current_user.profile_pic, border: 0, size: "70x70"), user_path(current_user) %>

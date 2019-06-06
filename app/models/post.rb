@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   has_many :upvote_posts, dependent: :destroy
   has_many :downvote_posts, dependent: :destroy
   has_many :mark_innapropiateds, :as => :inappropriate, dependent: :destroy
+  has_many :category_posts, dependent: :destroy
 
   validates :user_id, presence: true ,numericality: {only_integer: true}
   validates :title, :description, presence: true

@@ -60,6 +60,9 @@ $ rails server
     * View author profile
     * Add comment to report comments thread
     * Delete comment
+8. User Search
+    * Search by nickname
+    * Search by location
 #### Testing:
 #### On work:
 #### Missing:
@@ -74,9 +77,6 @@ $ rails server
 7. Comment threads for posts
     * Edit comment in report comments thread
     * Tag user in comment
-8. User Search
-    * Search by nickname
-    * Search by location
 9. Categories
     * Create Category
     * Delete Category

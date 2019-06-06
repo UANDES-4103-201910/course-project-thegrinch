@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :mark_innapropiateds
   end
   resources :users
+  resources :searches
 
   devise_scope :user do
     get '/register', to: 'devise/registrations#new'
