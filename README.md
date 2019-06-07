@@ -74,14 +74,18 @@ $ rails server
 2. Registration
     * Password recovery (devise)
     * Add profile image
+5. User Profile
+	* Follow
+	* Block
+	* Dumpster
 6. Posts
     * View post
         * View file attachments
         * View category
     * Add category to post
     * Remove category to post
-7. Comment threads for posts
-    * Edit comment in report comments thread
+7. Comment
+    * Edit comment
     * Tag user in comment
 10. Achievements
     * Create Achievements
@@ -89,12 +93,11 @@ $ rails server
     * Win Achievements
 #### Bugs:
 2. Registration
-    * User registration
+    * User registration (and admin)
 3. User Administration
     * Delete user
     * Make user an admin
-4. System Administration
-    * New administrator
-    * Delete administrator
 6. Posts 
     * Delete post
+9. Categories
+	* Edit Category
