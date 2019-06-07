@@ -1,0 +1,11 @@
+<div class="row">
+  <div style="width: 50%">
+    <p><%= category.name %></p>
+  </div>
+  <div>
+    <%= link_to 'Edit', categories_update_path%>
+  </div>
+  <div>
+    <%= link_to 'Delete', categories_destroy_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>

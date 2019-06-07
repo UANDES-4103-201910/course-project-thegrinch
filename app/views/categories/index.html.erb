@@ -1,7 +1,18 @@
 <% provide(:title, "Categories") %>
-<p id="notice"><%= notice %></p>
 
 <h1>Categories</h1>
+<% categorie=@category %>
+<%= form_with(model: categorie, local: true) do |form| %>
+  <div class="row">
+    <div style="width: 50%">
+      <%= form.text_field :name %>
+    </div>
+    <div>
+      <%= form.submit 'Create Category' %>
+    </div>
+  </div>
+<% end %>
+<hr>
 <div>
   <% @categories.each do |category| %>
     <div class="row">
@@ -12,14 +23,8 @@
         <%= link_to 'Edit', categories_update_path%>
       </div>
       <div>
-        <%= link_to 'Delete', categories_destroy_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Delete',  { action: :destroy, id: category.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
     </div>
   <% end %>
 </div>
-<hr>
-<%= form_with(model: @category, local: true) do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <%= form.submit 'Create Category' %>
-<% end %>

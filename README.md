@@ -63,6 +63,9 @@ $ rails server
 8. User Search
     * Search by nickname
     * Search by location
+9. Categories
+    * Create Category
+    * Delete Category
 #### Testing:
 #### On work:
 #### Missing:
@@ -80,9 +83,6 @@ $ rails server
 7. Comment threads for posts
     * Edit comment in report comments thread
     * Tag user in comment
-9. Categories
-    * Create Category
-    * Delete Category
 10. Achievements
     * Create Achievements
     * Delete Achievements
