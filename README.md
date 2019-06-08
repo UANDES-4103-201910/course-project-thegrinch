@@ -76,7 +76,7 @@ $ rails server
     * Add profile image
 5. User Profile
 	* Follow
-	* Block
+	* Blocked
 	* Dumpster
 6. Posts
     * View post

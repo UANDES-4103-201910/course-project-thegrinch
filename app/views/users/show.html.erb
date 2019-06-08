@@ -105,8 +105,8 @@
       <div style="width: 30%">
         <h3>Blacklist:<br></h3>
         <div class="row">
-          <% @blockings = Block.where(owner_id: @user.id) %>
-          <% @blockings.each do |block| %>
+          <% blockings = Block.where(owner_id: @user.id) %>
+          <% blockings.each do |block| %>
             <h3>
               <%= link_to block.blocked.nickname , user_path(block.blocked) %>
             </h3>
@@ -119,8 +119,8 @@
       <div style="width: 30%">
         <h3>Dumpster:<br></h3>
         <div class="row">
-          <% @dumpster = Post.where("user_id = ? AND dumped = ?",@user.id,true) %>
-          <% @dumpster.each do |post| %>
+          <% dumpster = Post.where("user_id = ? AND dumped = ?",@user.id,true) %>
+          <% dumpster.each do |post| %>
             <h3>
               <%= link_to post.title , post_path(post) %>
             </h3>

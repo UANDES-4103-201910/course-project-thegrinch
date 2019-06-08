@@ -209,3 +209,11 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
+
+.img-round{
+  background-size: cover;
+  display: block;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+}
