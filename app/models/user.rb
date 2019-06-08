@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   require 'uri'
 
+  has_one_attached :profile_pic
+
   has_many :comments, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :blockeds, class_name: 'block', foreign_key: 'blocked_id', dependent: :destroy
@@ -32,5 +34,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
+
+  def user_avatar
+    if self.profile_pic.attached?
+      self.profile_pic
+    else
+      'default-user.png'
+    end
+  end
 
 end

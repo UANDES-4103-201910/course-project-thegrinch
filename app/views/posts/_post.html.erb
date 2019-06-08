@@ -10,7 +10,7 @@
         </h3>
       </div>
       <div class="row">
-        <%= link_to image_tag(post.user.profile_pic, border: 0, size: "30x30", class: "img-round"), user_path(post.user) %>
+        <%= link_to image_tag(post.user.user_avatar, border: 0, size: "30x30", class: "img-round"), user_path(post.user) %>
         <div>
           <p>
             <%= link_to post.user.nickname, user_path(post.user) %>
