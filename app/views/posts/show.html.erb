@@ -1,12 +1,34 @@
 <div class="jumbotron">
-  <div style="width: 26%">
-    <%= image_tag("forest-fog-wallpaper.jpg", border: 0, size: "900x400") %>
-  </div>
+  <% if @post.images.attached?%>
+    <div style="width: 26%">
+      <%= image_tag(@post.images, border: 0, size: "900x400") %>
+    </div>
+  <% end %>
   <div style="width: 72%">
     <div style="height: 100px">
-      <h2>
-        <%= @post.title %>
-      </h2>
+      <div class="row">
+        <div>
+          <h2>
+            <%= @post.title %>
+          </h2>
+        </div>
+        <div>
+          <div class="row">
+            <% @post.post_categories.each do |cat| %>
+              <div>
+                <p class="category">
+                  <%= cat.name %>
+                  <% if user_signed_in? %>
+                    <% if @post.user==current_user or current_user.role=="admin"%>
+                  <%= link_to 'X', remove_category_path(cat.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <% end %>
+                  <% end %>
+                </p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
       <h5>
         By
         <%= link_to @post.user.nickname, user_path(@post.user)%>
@@ -24,6 +46,19 @@
       <% if @post.user==current_user or current_user.role=="admin"%>
         <%= link_to 'Edit', edit_post_path(@post) %>
         <%= link_to 'Delete', post_path(@post), method: :delete %>
+        <div>
+          <%= form_tag('/add_category', method: :post) do %>
+            <div class="row">
+              <div>
+                <%= select_tag :category_id, options_from_collection_for_select(Category.all, "id", "name") %>
+                <%= hidden_field_tag :post_id, @post.id %>
+              </div>
+              <div>
+                <%= submit_tag "Add Category"%>
+              </div>
+            </div>
+          <% end %>
+        </div>
       <% end %>
       <% if @post.user==current_user %>
       <% else %>
@@ -57,7 +92,7 @@
     <% @comments.each do |comment| %>
       <div class="row content">
         <div style="width: 15%" class="img-with-text">
-          <%= link_to image_tag(comment.user.profile_pic, border: 0, size: "60x60"), home_path %>
+          <%= link_to image_tag(comment.user.user_avatar, border: 0, size: "60x60"), home_path %>
           <p>
             <%= link_to comment.user.nickname, user_path(comment.user) %>
           </p>
@@ -67,10 +102,12 @@
             <%= comment.content %>
           </h5>
         </div>
-        <% if comment.user==current_user or current_user.role == "admin"%>
-          <div>
-            <%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
+        <% if user_signed_in? %>
+          <% if comment.user==current_user or current_user.role == "admin"%>
+            <div>
+              <%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          <% end %>
         <% end %>
       </div>
     <% end %>

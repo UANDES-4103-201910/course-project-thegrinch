@@ -31,6 +31,7 @@ $ rails server
     * Log out
 2. Registration
     * Change password
+    * Add profile image
 3. User Administration
     * Edit User
     * Change password
@@ -50,6 +51,9 @@ $ rails server
     * View post
         * View title, description, location, and creation date
         * View upvotes and downvotes
+        * View file attachments
+        * View category
+    * Add category to post
     * Edit post
     * View publisher profile
     * Upvote post
@@ -73,17 +77,10 @@ $ rails server
     * Log in with Google authentication
 2. Registration
     * Password recovery (devise)
-    * Add profile image
 5. User Profile
 	* Follow
 	* Blocked
 	* Dumpster
-6. Posts
-    * View post
-        * View file attachments
-        * View category
-    * Add category to post
-    * Remove category to post
 7. Comment
     * Edit comment
     * Tag user in comment
@@ -91,6 +88,7 @@ $ rails server
     * Create Achievements
     * Delete Achievements
     * Win Achievements
+11. Admin nav-bar
 #### Bugs:
 2. Registration
     * User registration (and admin)
@@ -99,5 +97,6 @@ $ rails server
     * Make user an admin
 6. Posts 
     * Delete post
+    * Remove category to post
 9. Categories
 	* Edit Category

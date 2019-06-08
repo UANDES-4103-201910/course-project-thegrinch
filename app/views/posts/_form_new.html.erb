@@ -37,6 +37,11 @@
     </select>
   </div>
 
+  <div class="field">
+    <%= form.label :images %>
+    <%= form.file_field :images %>
+  </div>
+
   <%= form.hidden_field :user_id, value: current_user.id %>
 
   <div class="actions">

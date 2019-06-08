@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  delete 'remove_category', to: 'category_posts#destroy'
+  post 'add_category', to: 'category_posts#create'
   devise_for :users
   get 'achievements', to: 'achievements#index'
   post 'achievements', to: 'achievements#create'
