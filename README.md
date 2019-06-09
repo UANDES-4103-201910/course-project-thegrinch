@@ -71,6 +71,7 @@ $ rails server
 9. Categories
     * Create Category
     * Delete Category
+11. Admin nav-bar
 #### Testing:
 2. Registration
     * Password recovery (devise)
@@ -89,13 +90,12 @@ $ rails server
     * Create Achievements
     * Delete Achievements
     * Win Achievements
-11. Admin nav-bar
 #### Bugs:
 3. User Administration
     * Delete user
     * Make user an admin
 6. Posts 
     * Delete post
-    * Remove category to post
+    * Remove category from post
 9. Categories
 	* Edit Category

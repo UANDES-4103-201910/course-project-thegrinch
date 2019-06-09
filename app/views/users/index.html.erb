@@ -23,25 +23,21 @@
             <td><%= user.email %></td>
             <td><%= user.role %></td>
             <td><%= user.last_sign_in_at %></td>
-            <td><%= link_to 'Show', user %></td>
+            <td><%= link_to 'Show', user, class: "btn btn-primary" %></td>
             <td>
               <% if user.role=='user' %>
-                <%= link_to("Make Admin", user_path(user,"user[role]" => "admin"), :method => :put, :confirm => "Are you sure?") %>
-                        <% if false %>
                         <%= form_with(model: user, local: true, action: 'make_admin') do |form| %>
                           <%= form.hidden_field :role, value: 'admin' %>
                           <%= form.submit "Make Admin", class: 'btn btn-primary' %>
-                          <% end %>
                         <% end %>
               <% end %>
             </td>
-            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary"%></td>
           </tr>
         <% end %>
       </tbody>
     </table>
     <br>
-    <%= link_to 'Create a new registered user', new_user_registration_path %>
   <% else %>
     <p>You don't have access to this page.</p>
   <% end %>

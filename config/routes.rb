@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     get '/log_in', to: 'devise/sessions#new'
   end
 
+  get '/users/:id', to: 'users#show'
   put '/users/makeadmin', to: 'users#make_admin'
   get '/home', to: 'static_pages#home'
   get '/about', to: 'static_pages#about'

@@ -4,34 +4,37 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="logos">
-      <%= link_to image_tag("logo.png", border: 0, size: "170x150"), home_path %>
+      <%= link_to image_tag("logo.png", border: 0, size: "130x100"), home_path %>
       <ul>
         <br>
         <li><%= link_to "The Grinch", root_path, class: 'titulo'%></li>
         <li><%= link_to "For the little Grinch inside us all", root_path, class: 'slogan'%></li>
       </ul>
     </div>
-    <div>
-      <%= button_to "Search complaint", new_search_path, method: :get, class: "btn btn-primary" %>
+    <div class="row">
+      <div>
+        <%= button_to "Search complaint", new_search_path, method: :get, class: "btn btn-primary" %>
+      </div>
       <%if user_signed_in?  %>
-      <%= link_to 'Create a Complaint', new_post_path, class: "btn btn-primary" %>
+        <div>
+          <%= button_to 'Create a Complaint', new_post_path, class: "btn btn-primary" %>
+        </div>
       <% end %>
     </div>
     <div class="img-with-text">
       <%if user_signed_in?  %>
         <%= link_to image_tag(current_user.user_avatar, border: 0, size: "70x70"), user_path(current_user) %>
-        <ul>
-          <li><%= link_to current_user.nickname, user_path(current_user) %></li>
+        <div class="row" style="text-align: center"><ul>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete  %></li>
-        </ul>
+        </ul></div>
       <% else %>
-        <%= link_to image_tag("default-user.png", border: 0, size: "120x120"), home_path %>
+        <%= link_to image_tag("default-user.png", border: 0, size: "70x70"), home_path %>
         <ul>
           <li><%= link_to "Sign in", new_user_session_path , class: "link-header"%></li>
           <li><%= link_to "Sign up", new_user_registration_path, class: "link-header" %></li>
         </ul>
       <% end %>
-      
+
     </div>
   </div>
 </nav>
