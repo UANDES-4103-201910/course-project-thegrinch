@@ -76,13 +76,13 @@ $ rails server
 2. Registration
     * Password recovery (devise)
 #### On work:
-#### Missing:
-1. System Access
-    * Log in with Google authentication
 5. User Profile
 	* Follow
 	* Blocked
 	* Dumpster
+#### Missing:
+1. System Access
+    * Log in with Google authentication
 7. Comment
     * Edit comment
     * Tag user in comment
