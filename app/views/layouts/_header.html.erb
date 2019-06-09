@@ -11,7 +11,12 @@
         <li><%= link_to "For the little Grinch inside us all", root_path, class: 'slogan'%></li>
       </ul>
     </div>
-    <%= button_to "Search your desired complaint!", new_search_path, method: :get %>
+    <div>
+      <%= button_to "Search complaint", new_search_path, method: :get, class: "btn btn-primary" %>
+      <%if user_signed_in?  %>
+      <%= link_to 'Create a Complaint', new_post_path, class: "btn btn-primary" %>
+      <% end %>
+    </div>
     <div class="img-with-text">
       <%if user_signed_in?  %>
         <%= link_to image_tag(current_user.user_avatar, border: 0, size: "70x70"), user_path(current_user) %>
