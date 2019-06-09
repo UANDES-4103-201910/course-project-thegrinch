@@ -17,16 +17,6 @@
         <%= form.text_field :nickname %>
       </div>
 
-      <div class="field">
-        <%= form.label :email %>
-        <%= form.email_field :email %>
-      </div>
-
-      <div class="field">
-        <%= form.label "Password: (Put the same as before if you don't want to change it)" %>
-        <%= form.password_field :password %>
-      </div>
-
       <%= form.hidden_field :role, value: 'user' %>
 
       <div class="field">
@@ -59,6 +49,10 @@
       </div>
     </div>
 
+    <div class="field">
+      <%= form.label "Password: (Put the same as before if you don't want to change it)" %>
+      <%= form.password_field :password %>
+    </div>
     <%= form.submit "Update", class: 'btn btn-primary' %>
   </div>
 <% end %>

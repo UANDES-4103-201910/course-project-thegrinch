@@ -30,6 +30,7 @@ $ rails server
     * Log in with email address
     * Log out
 2. Registration
+    * User registration
     * Change password
     * Add profile image
 3. User Administration
@@ -71,12 +72,12 @@ $ rails server
     * Create Category
     * Delete Category
 #### Testing:
+2. Registration
+    * Password recovery (devise)
 #### On work:
 #### Missing:
 1. System Access
     * Log in with Google authentication
-2. Registration
-    * Password recovery (devise)
 5. User Profile
 	* Follow
 	* Blocked
@@ -90,8 +91,6 @@ $ rails server
     * Win Achievements
 11. Admin nav-bar
 #### Bugs:
-2. Registration
-    * User registration (and admin)
 3. User Administration
     * Delete user
     * Make user an admin

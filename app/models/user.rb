@@ -23,9 +23,9 @@ class User < ApplicationRecord
   has_many :follow_posts, dependent: :destroy
   has_many :mark_innapropiateds, dependent: :destroy
 
-  validates :nickname, :email, :password, presence: true
-  validates :nickname, length: { minimum: 2 }, uniqueness: {case_sensitive: true}
-  validates :name, length: { minimum: 2 }
+  # validates :nickname, :email, :password, presence: true
+  # validates :nickname, length: { minimum: 2 }, uniqueness: {case_sensitive: true}
+  # validates :name, length: { minimum: 2 }
   validates :bio, length: { maximum: 500 }
   validates :password, length: { in: 6..20 }
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: {case_sensitive: true}

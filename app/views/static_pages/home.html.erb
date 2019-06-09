@@ -1,3 +1,10 @@
+<head>
+  <% if user_signed_in? %>
+    <% if current_user.nickname==nil %>
+      <meta http-equiv="Refresh" content="0; url=http://localhost:3000/users/edit" />
+    <% end %>
+  <% end %>
+</head>
 <div class="center jumbotron">
 
   <% if user_signed_in? %>
