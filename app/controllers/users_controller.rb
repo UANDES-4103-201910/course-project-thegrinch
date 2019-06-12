@@ -62,8 +62,28 @@ class UsersController < ApplicationController
   end
 
   def make_admin
-    @user.update(role: 'admin')
-    format.html { redirect_to users_url, notice: 'User has been promoted to admin' }
+    @user=User.find(params[:user][:id])
+    @user.role='admin'
+    respond_to do |format|
+      if @user.save(validate: false)
+        format.html { redirect_to users_path, notice: 'User has been promoted to admin'}
+      else
+        format.html { redirect_to :users, notice: 'There was an error'}
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  def remove_admin
+    @user=User.find(params[:user][:id])
+    @user.role='user'
+    respond_to do |format|
+      if @user.save(validate: false)
+        format.html { redirect_to users_path, notice: 'User has been demoted.'}
+      else
+        format.html { redirect_to :users, notice: 'There was an error'}
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   private

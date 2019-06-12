@@ -39,6 +39,7 @@ $ rails server
     * View user details
         * Last access
         * User role
+    * Make user an admin
 4. System Administration
     * View administrator details
     * Edit administrator
@@ -86,6 +87,8 @@ $ rails server
 7. Comment
     * Edit comment
     * Tag user in comment
+9. Categories
+    * Edit Category
 10. Achievements
     * Create Achievements
     * Delete Achievements
@@ -93,9 +96,6 @@ $ rails server
 #### Bugs:
 3. User Administration
     * Delete user
-    * Make user an admin
 6. Posts 
     * Delete post
     * Remove category from post
-9. Categories
-	* Edit Category

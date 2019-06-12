@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  put '/remove_admin', to: 'users#remove_admin'
+  put '/make_admin', to: 'users#make_admin'
   get 'users/edit',to: 'users#edit'
   delete 'remove_category', to: 'category_posts#destroy'
   post 'add_category', to: 'category_posts#create'
