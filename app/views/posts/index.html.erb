@@ -10,7 +10,6 @@
       <th>Owner</th>
       <th>Location</th>
       <th>Dumped</th>
-      <th>Grinchrate</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,15 +17,27 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
+        <td><%= link_to post.title, post %></td>
         <td><%= post.description %></td>
-        <td><%= post.user.nickname %></td>
+        <td><%= link_to post.user.nickname, post.user %></td>
         <td><%= post.location %></td>
-        <td><%= post.dumped %></td>
-        <td><%= post.grinchrate %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <% if post.dumped %>
+            <%= image_tag("Thumbsup.png", alt:"Yes", size: "20x20") %>
+          <% else %>
+            <%= image_tag("Thumbsdown.png", alt:"No", size: "20x20") %>
+          <% end %>
+        </td>
+        <td><%= button_to 'Edit', edit_post_path(post) , class: "btn btn-primary"%></td>
+        <td><% if post.dumped %>
+            <%= form_for(post, method: :put, url: {action: 'recover_post', controller: "users"}) do |form| %>
+              <%= form.hidden_field :id, value: post.id %>
+              <%= form.submit "Recover", class: 'btn btn-primary' %>
+            <% end %>
+            <% else %>
+              <%= link_to 'Dump', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary" %>
+            <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +45,4 @@
 
 <br>
 
-<%= link_to 'Create New Complaint', new_post_path %>
+<%= button_to 'Create New Complaint', new_post_path, class: "btn btn-primary" %>

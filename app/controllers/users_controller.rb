@@ -91,7 +91,7 @@ class UsersController < ApplicationController
     @post.dumped= false
     respond_to do |format|
       if @post.save(validate: false)
-        format.html { redirect_to @post, notice: 'Post recovered'}
+        format.html { redirect_to request.referrer, notice: 'Post recovered'}
       else
         format.html { redirect_to request.referrer, notice: 'There was an error'}
         format.json { render json: @post.errors, status: :unprocessable_entity }

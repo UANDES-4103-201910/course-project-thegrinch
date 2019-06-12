@@ -1,29 +1,31 @@
-<div class="row content">
-    <div style="width: 30%">
-      <% if post.images.attached?%>
-        <%= link_to image_tag(post.images, border: 0, size: "200x150"), post_path(post) %>
-      <% else %>
-        <%= link_to image_tag("El-nuevo-poster-de-El-Grinch-muestra-al-villano-de-pequeno.jpg", border: 0, size: "200x150"), post_path(post) %>
-      <% end %>
-    </div>
-  <div>
-    <div >
-      <div>
-        <h3>
-          <%= link_to post.title , post_path(post) %>
-        </h3>
+<% if not post.dumped and not post.blockers.include?(current_user)%>
+  <div class="row content">
+      <div style="width: 30%">
+        <% if post.images.attached?%>
+          <%= link_to image_tag(post.images, border: 0, size: "300x170"), post_path(post) %>
+        <% else %>
+          <%= link_to image_tag("El-nuevo-poster-de-El-Grinch-muestra-al-villano-de-pequeno.jpg", border: 0, size: "200x150"), post_path(post) %>
+        <% end %>
       </div>
-      <div class="row">
-        <%= link_to image_tag(post.user.user_avatar, border: 0, size: "30x30", class: "img-round"), user_path(post.user) %>
+    <div>
+      <div >
         <div>
-          <p>
-            <%= link_to post.user.nickname, user_path(post.user) %>
-          </p>
+          <h3>
+            <%= link_to post.title , post_path(post) %>
+          </h3>
+        </div>
+        <div class="row">
+          <%= link_to image_tag(post.user.user_avatar, border: 0, size: "30x30", class: "img-round"), user_path(post.user) %>
+          <div>
+            <p>
+              <%= link_to post.user.nickname, user_path(post.user) %>
+            </p>
+          </div>
         </div>
       </div>
+      <p>
+        <%= post.description %>
+      </p>
     </div>
-    <p>
-      <%= post.description %>
-    </p>
   </div>
-</div>
+<% end %>

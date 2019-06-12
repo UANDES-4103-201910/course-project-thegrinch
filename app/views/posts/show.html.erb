@@ -44,8 +44,6 @@
     </div>
     <% if user_signed_in? %>
       <% if @post.user==current_user or current_user.role=="admin"%>
-        <%= link_to 'Edit', edit_post_path(@post) %>
-        <%= link_to 'Delete', post_path(@post), method: :delete %>
       <% else %>
         <div class="row">
           <div>
@@ -78,6 +76,19 @@
                 <%= submit_tag "Add Category", class: "btn btn-primary"%>
               </div>
             </div>
+          <% end %>
+        </div>
+        <div>
+          <%= button_to 'Edit', edit_post_path(@post),class: 'btn btn-primary' %>
+        </div>
+        <div>
+          <% if @post.dumped %>
+            <%= form_for(@post, method: :put, url: {action: 'recover_post', controller: 'users'}) do |form| %>
+              <%= form.hidden_field :id, value: @post.id %>
+              <%= form.submit "Recover", class: 'btn btn-primary' %>
+            <% end %>
+          <% else %>
+            <%= button_to 'Delete', post_path(@post), method: :delete, class: 'btn btn-primary'%>
           <% end %>
         </div>
       <% end %>

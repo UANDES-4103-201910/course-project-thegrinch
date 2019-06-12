@@ -33,4 +33,13 @@ class Post < ApplicationRecord
     end
     categories2
   end
+
+  def blockers
+    blockeds= Block.where(blocked_id: self.user)
+    blockerss = []
+    blockeds.each do |block|
+      blockerss.push block.owner
+    end
+    blockerss
+  end
 end
