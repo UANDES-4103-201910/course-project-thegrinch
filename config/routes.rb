@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  put '/recover_post', to: 'users#recover_post'
   put '/remove_admin', to: 'users#remove_admin'
   put '/make_admin', to: 'users#make_admin'
   get 'users/edit',to: 'users#edit'
@@ -22,7 +23,10 @@ Rails.application.routes.draw do
     resources :follow_posts
     resources :mark_innapropiateds
   end
-  resources :users
+  resources :users do
+    resources :blocks
+    resources :follow_users
+  end
   resources :searches
 
   devise_scope :user do

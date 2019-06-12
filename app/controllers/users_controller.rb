@@ -86,6 +86,30 @@ class UsersController < ApplicationController
     end
   end
 
+  def recover_post
+    @post=Post.find(params[:post][:id])
+    @post.dumped= false
+    respond_to do |format|
+      if @post.save(validate: false)
+        format.html { redirect_to @post, notice: 'Post recovered'}
+      else
+        format.html { redirect_to request.referrer, notice: 'There was an error'}
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  def recover_user
+    @block=Block.find(user_id: params[:user][:id])
+    respond_to do |format|
+      if @block.destroy
+        format.html { redirect_to @user, notice: 'Post recovered'}
+      else
+        format.html { redirect_to request.referrer, notice: 'There was an error'}
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

@@ -3,9 +3,12 @@ class FollowPostsController < ApplicationController
 
   def create
     if already_following?
+      follow=FollowPost.where(user_id: current_user.id, post_id: @post.id)
+      follow.destroy_all
+      flash[:notice] = "Removed from favorites"
     else
-      @post.downvote_posts.create(user_id: current_user.id)
-      flash[:notice] = "Following post!"
+      FollowPost.create(user_id: current_user.id, post_id: @post.id)
+      flash[:notice] = "Post added to favorites!"
     end
     redirect_to post_path(@post)
   end

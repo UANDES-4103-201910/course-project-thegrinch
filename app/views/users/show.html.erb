@@ -44,7 +44,7 @@
           <%= link_to 'Follow', register_path, class: "btn btn-primary" %>
         </div>
         <div>
-          <%= link_to 'Block', register_path, class: "btn btn-primary" %>
+          <%= link_to 'Block', user_blocks_path(@user), method: :post, class: "btn btn-primary" %>
         </div>
         <div>
           <% if current_user.role=="admin" and @user.role == "user" %>
@@ -89,43 +89,50 @@
   <% if current_user==@user or current_user.role=="admin" %>
     <div class="row">
       <div style="width: 30%">
-        <h3>Following:<br></h3>
-        <div class="row">
-          <% followings = FollowUser.where(follower_id: @user.id) %>
+        <h3>Favorite posts:<br></h3>
+        <div>
+          <% followings = FollowPost.where(user_id: @user.id) %>
           <% followings.each do |follow| %>
-            <h3>
-              <%= link_to follow.followed.name , user_path(follow.followed) %>
-            </h3>
-            <div>
-              <%= link_to "Remove", user_path(follow.followed) %>
+            <div class="row">
+              <h4>
+                <%= link_to follow.post.title , post_path(follow.post) %>
+              </h4>
+              <div>
+                <%= link_to "Remove", post_follow_posts_path(follow.post), method: :post %>
+              </div>
             </div>
           <% end %>
         </div>
       </div>
       <div style="width: 30%">
         <h3>Blacklist:<br></h3>
-        <div class="row">
+        <div>
           <% blockings = Block.where(owner_id: @user.id) %>
           <% blockings.each do |block| %>
-            <h3>
-              <%= link_to block.blocked.nickname , user_path(block.blocked) %>
-            </h3>
-            <div>
-              <%= link_to "Remove", user_path(block.blocked) %>
+            <div class="row">
+              <h4>
+                <%= link_to block.blocked.nickname , user_path(block.blocked) %>
+              </h4>
+              <div>
+                <%= link_to 'Unblock', user_blocks_path(block.blocked), method: :post %>
+              </div>
             </div>
           <% end %>
         </div>
       </div>
       <div style="width: 30%">
         <h3>Dumpster:<br></h3>
-        <div class="row">
+        <div>
           <% dumpster = Post.where("user_id = ? AND dumped = ?",@user.id,true) %>
           <% dumpster.each do |post| %>
-            <h3>
-              <%= link_to post.title , post_path(post) %>
-            </h3>
-            <div>
-              <%= link_to "Remove", post_path(post) %>
+            <div class="row">
+              <h4>
+                <%= link_to post.title , post_path(post) %>
+              </h4>
+              <%= form_for(post, method: :put, url: {action: 'recover_post'}) do |form| %>
+                <%= form.hidden_field :id, value: @user.id %>
+                <%= form.submit "Recover", class: 'btn btn-primary' %>
+              <% end %>
             </div>
           <% end %>
         </div>

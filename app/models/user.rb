@@ -42,5 +42,4 @@ class User < ApplicationRecord
       'default-user.png'
     end
   end
-
 end

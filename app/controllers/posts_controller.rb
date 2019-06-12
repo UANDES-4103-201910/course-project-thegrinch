@@ -54,9 +54,10 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post.destroy
+    user=@post.user
+    @post.update_attributes(dumped: true)
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to user, notice: 'Post added to dumpster.' }
       format.json { head :no_content }
     end
   end
