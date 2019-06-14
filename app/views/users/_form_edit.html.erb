@@ -16,8 +16,11 @@
         <%= form.label :nickname %>
         <%= form.text_field :nickname %>
       </div>
-
-      <%= form.hidden_field :role, value: 'user' %>
+      <% if current_user.role=="admin" %>
+        <%= form.hidden_field :role, value: 'admin' %>
+      <% else %>
+        <%= form.hidden_field :role, value: 'user' %>
+      <% end %>
 
       <div class="field">
         <%= form.label :name %>

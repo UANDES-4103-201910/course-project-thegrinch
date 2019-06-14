@@ -96,6 +96,6 @@ $ rails server
 #### Bugs:
 3. User Administration
     * Delete user
+    * Edit User (it logs out)
 6. Posts 
-    * Delete post
     * Remove category from post

@@ -1,7 +1,5 @@
 <h1>Posts</h1>
 
-<p><%= link_to "Advanced Search", new_search_path %></p>
-
 <table class="table table-bordered table-hover">
   <thead>
     <tr>
@@ -28,7 +26,7 @@
             <%= image_tag("Thumbsdown.png", alt:"No", size: "20x20") %>
           <% end %>
         </td>
-        <td><%= button_to 'Edit', edit_post_path(post) , class: "btn btn-primary"%></td>
+        <td><%= button_to 'Edit', edit_post_path(post) , class: "btn btn-primary", method: :get%></td>
         <td><% if post.dumped %>
             <%= form_for(post, method: :put, url: {action: 'recover_post', controller: "users"}) do |form| %>
               <%= form.hidden_field :id, value: post.id %>

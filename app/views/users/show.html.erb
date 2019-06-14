@@ -1,58 +1,63 @@
-<div class="row jumbotron">
-  <div style="width: 18%" class="img-with-text">
-    <%= image_tag(@user.user_avatar, border: 0, size: "150x150") %>
-  </div>
-  <div style="width: 28%">
-    <p>
-      <strong>Username:</strong>
-      <%= @user.nickname %>
-    </p>
+<div class="jumbotron">
+  <div class="row">
+    <div style="width: 18%" class="img-with-text">
+      <%= image_tag(@user.user_avatar, border: 0, size: "150x150") %>
+    </div>
+    <div style="width: 28%">
+      <p>
+        <strong>Username:</strong>
+        <%= @user.nickname %>
+      </p>
 
-    <p>
-      <strong>Name:</strong>
-      <%= @user.name %>
-      <%= @user.last_name %>
-    </p>
+      <p>
+        <strong>Name:</strong>
+        <%= @user.name %>
+        <%= @user.last_name %>
+      </p>
+      <% if user_signed_in? %>
+        <% if current_user==@user or current_user.role=="admin" %>
+        <p>
+          <strong>Email:</strong>
+          <%= @user.email %>
+        </p>
+        <% end %>
+      <% end %>
+    </div>
+    <div style="width: 28%">
+      <p>
+        <strong>Profession:</strong>
+        <%= @user.profession %>
+      </p>
+      <p>
+        <strong>Location:</strong>
+        <%= @user.location %>
 
-    <p>
-      <strong>Email:</strong>
-      <%= @user.email %>
-    </p>
-  </div>
-  <div style="width: 28%">
-    <p>
-      <strong>Profession:</strong>
-      <%= @user.profession %>
-    </p>
-    <p>
-      <strong>Location:</strong>
-      <%= @user.location %>
-
-    </p>
+      </p>
+      <% if user_signed_in?  %>
+        <% if current_user==@user or current_user.role=="admin" %>
+          <h4><%= link_to 'Edit Profile', edit_user_path(@user) %></h4>
+        <% end %>
+      <% end %>
+    </div>
     <% if user_signed_in?  %>
-      <% if current_user==@user or current_user.role=="admin" %>
-        <h4><%= link_to 'Edit Profile', edit_user_path(@user) %></h4>
+      <% if current_user==@user %>
+
+      <% else %>
+        <div style="width: 18%">
+          <div>
+            <%= link_to 'Block / Unblock', user_blocks_path(@user), method: :post, class: "btn btn-primary" %>
+          </div>
+        </div>
       <% end %>
     <% end %>
   </div>
-  <% if user_signed_in?  %>
-    <% if current_user==@user %>
 
-    <% else %>
-      <div style="width: 18%">
-        <div>
-          <%= link_to 'Block', user_blocks_path(@user), method: :post, class: "btn btn-primary" %>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
-
-<div class="data_field">
-  <p>
+  <div class="data_field">
+    <p>
     <h3>Biography:<br></h3>
     <%= @user.bio %>
-  </p>
+    </p>
+  </div>
 </div>
 <div>
   <h3><%= @user.nickname %>'s Complaints:</h3>

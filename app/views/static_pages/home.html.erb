@@ -22,6 +22,6 @@
 
 <div>
   <h3>Hot Complaints:</h3>
-  <% @posts = Post.limit(5).order("RANDOM()") %>
+  <% @posts = Post.limit(5).order("ID") %>
   <%= render @posts %>
 </div>

@@ -79,7 +79,7 @@
           <% end %>
         </div>
         <div>
-          <%= button_to 'Edit', edit_post_path(@post),class: 'btn btn-primary' %>
+          <%= button_to 'Edit', edit_post_path(@post),class: 'btn btn-primary', method: :get %>
         </div>
         <div>
           <% if @post.dumped %>
@@ -146,7 +146,7 @@
           <%= form.text_field :content %>
         </div>
         <div class="actions">
-          <%= form.submit %>
+          <%= form.submit class: "btn btn-primary"%>
         </div>
       </div>
     <% end %>
